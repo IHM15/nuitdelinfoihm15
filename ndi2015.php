@@ -4,6 +4,6 @@
  */
 echo "post";
 
-exec("git pull");
+exec(git pull);
 
 ?>
