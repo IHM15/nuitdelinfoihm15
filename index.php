@@ -1,3 +1,11 @@
+<?php
+  require_once('php/model/PDOSingleton.php');
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -67,7 +75,12 @@
       <!-- Main jumbotron for a primary marketing message or call to action -->
       <div class="jumbotron">
         <h1>AutoPull BIS Succeeded ! Test terminal</h1>
-        <p>This is a template showcasing the optional theme stylesheet included in Bootstrap. Use it as a starting point to create something more unique by building on or modifying it.</p>
+        <?php
+          $pdo = PDOSingleton::getInstance();
+          $users = $pdo->query("SELECT * FROM user")->fetch();
+          echo('<p>USER  : '.$users['ID'].'</br>This is a template showcasing the optional theme stylesheet included in Bootstrap. Use it as a starting point to create something more unique by building on or modifying it.</p>');
+        ?>
+
       </div>
 
 

@@ -70,6 +70,7 @@ class PDOSingleton {
      */
     private function __construct()
     {
+        print_r(SQLConstants::SQL_DTB);
         $this->DEFAULT_SQL_DTB = SQLConstants::SQL_DTB;
         $this->DEFAULT_SQL_HOST = SQLConstants::SQL_HOST;
         $this->DEFAULT_SQL_PASS = SQLConstants::SQL_PASS;
@@ -77,10 +78,10 @@ class PDOSingleton {
         $this->DEFAULT_SQL_USER = SQLConstants::SQL_USER;
         //Dans le cas ou nous sommes sur le serveur, il n'y a pas de port (localhost)
         if ($this->DEFAULT_SQL_PORT == SQLConstants::SQL_NO_PORT) {
-            $this->PDOInstance = new PDO('mysql:dbname='.self::DEFAULT_SQL_DTB.';host='.self::DEFAULT_SQL_HOST,self::DEFAULT_SQL_USER ,self::DEFAULT_SQL_PASS);
+            $this->PDOInstance = new PDO('mysql:dbname='.$this->DEFAULT_SQL_DTB.';host='.$this->DEFAULT_SQL_HOST,$this->DEFAULT_SQL_USER ,$this->DEFAULT_SQL_PASS);
         } else {
-            $this->PDOInstance = new PDO('mysql:dbname='.self::DEFAULT_SQL_DTB.';host='.self::DEFAULT_SQL_HOST.';port='.self::DEFAULT_SQL_PORT
-                ,self::DEFAULT_SQL_USER ,self::DEFAULT_SQL_PASS);
+            $this->PDOInstance = new PDO('mysql:dbname='.$this->DEFAULT_SQL_DTB.';host='.$this->DEFAULT_SQL_HOST.';port='.$this->DEFAULT_SQL_PORT
+                ,$this->DEFAULT_SQL_USER ,$this->DEFAULT_SQL_PASS);
         }
 
     }
@@ -91,13 +92,13 @@ class PDOSingleton {
      * @access public
      * @static
      * @param void
-     * @return SPDO $instance
+     * @return PDOSingleton $instance
      */
     public static function getInstance()
     {
         if(is_null(self::$instance))
         {
-            self::$instance = new SPDO();
+            self::$instance = new PDOSingleton();
         }
         return self::$instance;
     }

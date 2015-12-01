@@ -9,7 +9,7 @@
 class SQLConstants
 {
     const SQL_USER = 'ihm15';
-    const SQL_HOST = '37.187.123.225';
+    const SQL_HOST = 'localhost';
     const SQL_NO_PORT = '-1';
     const SQL_PORT = SQL_NO_PORT;
     const SQL_PASS = 'ihmnuitdelinfo15';
