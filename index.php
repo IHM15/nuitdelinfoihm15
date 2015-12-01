@@ -74,7 +74,7 @@
 
       <!-- Main jumbotron for a primary marketing message or call to action -->
       <div class="jumbotron">
-        <h1>AutoPull BIS Succeeded ! Test terminal</h1>
+        <h1>OK</h1>
         <?php
           $pdo = PDOSingleton::getInstance();
           $users = $pdo->query("SELECT * FROM user")->fetch();
