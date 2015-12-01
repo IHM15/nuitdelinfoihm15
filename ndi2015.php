@@ -8,7 +8,7 @@ exec(git pull);*/
 echo "Autopull script Start";
 exec ('rm -rf ~/subs/nuitdelinfoihm15');
 echo "rm ok";
-exec ('git clone git@github.com:IHM15/nuitdelinfoihm15.git');
+exec ('cd ../ ; git clone git@github.com:IHM15/nuitdelinfoihm15.git');
 echo "clone ok";
 exec ('cp -f ~/subs/nuitdelinfoihm15/php/model/SQLConstants.php.serv ~/subs/nuitdelinfoihm15/php/model/SQLConstants.php');
 exec ('cp -rf ~/subs/PhpMyAdmin ~/subs/nuitdelinfoihm15/');
