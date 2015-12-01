@@ -5,13 +5,13 @@
 /*echo "post";
 
 exec(git pull);*/
-echo "Autopull script Start";
+echo "Autopull script Start \n";
 exec ('rm -rf ~/subs/nuitdelinfoihm15');
-echo "rm ok";
+echo "rm ok\n";
 exec ('cd ../ ; git clone git@github.com:IHM15/nuitdelinfoihm15.git');
-echo "clone ok";
+echo "clone ok\n";
 exec ('cp -f ~/subs/nuitdelinfoihm15/php/model/SQLConstants.php.serv ~/subs/nuitdelinfoihm15/php/model/SQLConstants.php');
 exec ('cp -rf ~/subs/PhpMyAdmin ~/subs/nuitdelinfoihm15/');
-echo "cp ok";
-echo "Autopull script End";
+echo "cp ok\n";
+echo "Autopull script End\n";
 ?>
