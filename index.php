@@ -74,7 +74,7 @@
 
       <!-- Main jumbotron for a primary marketing message or call to action -->
       <div class="jumbotron">
-        <h1>Le site de la nuit de l'info des IHM15</h1>
+        <h1>Le site de la nuit de l'info des IHM15 Pour élodie ! </h1>
         <?php
           $pdo = PDOSingleton::getInstance();
           $users = $pdo->query("SELECT * FROM user")->fetch();

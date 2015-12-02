@@ -1,10 +1,6 @@
 <?php
-
 /**
- * Created by PhpStorm.
- * User: nonau
- * Date: 01/12/15
- * Time: 09:30
+ * Constants class pour la partie client ! Ne pas changer !
  */
 class SQLConstants
 {

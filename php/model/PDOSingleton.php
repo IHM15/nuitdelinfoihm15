@@ -70,7 +70,6 @@ class PDOSingleton {
      */
     private function __construct()
     {
-        print_r(SQLConstants::SQL_DTB);
         $this->DEFAULT_SQL_DTB = SQLConstants::SQL_DTB;
         $this->DEFAULT_SQL_HOST = SQLConstants::SQL_HOST;
         $this->DEFAULT_SQL_PASS = SQLConstants::SQL_PASS;
