@@ -131,4 +131,16 @@ class PDOSingleton {
         $stmt->bindParam(':dv', $dv, PDO::PARAM_BOOL);
         return $stmt->execute();
     }
+
+    public function insertEvent($nom_evt,$date_deb,$date_fin, $resume, $description, $id_typeEvt) {
+        $stmt = $this->pdo->prepare('insert into evenement (:nom_event, :date_deb, :date_fin, :resume, :description, :id_typeEvt)');
+        $stmt->bindParam(':nom_event', $nom_evt, PDO::PARAM_STR);
+        $stmt->bindParam(':date_deb', $date_deb, PDO::PARAM_STR);
+        $stmt->bindParam(':date_fin', $date_fin, PDO::PARAM_STR);
+        $stmt->bindParam(':resume', $resume, PDO::PARAM_STR);
+        $stmt->bindParam('descirption',$description, PDO::PARAM_STR);
+        $stmt->bindParam('id_typeEvt', $id_typeEvt, PDO::PARAM_INT);
+        return $stmt->execute();
+
+    }
  }
