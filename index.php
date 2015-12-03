@@ -91,10 +91,12 @@ error_reporting(E_ALL);
         break;
       case "create-event" : include("html/createEvent.php");
         break;
-      default :
+      default : include("html/home.php");
+        break;
+    }
   } else {
     // TODO : Prepare an error
-    include("html/login.php");
+    include("html/home.php");
   }
 ?>
 
