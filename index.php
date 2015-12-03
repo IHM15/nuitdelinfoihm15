@@ -89,6 +89,8 @@ error_reporting(E_ALL);
         break;
       case "signup" : include("html/signup.php");
         break;
+      case "create-event" : include("html/createEvent.php");
+        break;
       default :
   } else {
     // TODO : Prepare an error
