@@ -141,6 +141,5 @@ class PDOSingleton {
         $stmt->bindParam('descirption',$description, PDO::PARAM_STR);
         $stmt->bindParam('id_typeEvt', $id_typeEvt, PDO::PARAM_INT);
         return $stmt->execute();
-
     }
  }
