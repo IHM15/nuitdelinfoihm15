@@ -16,3 +16,13 @@ body {
 .theme-showcase .navbar .container {
   width: auto;
 }
+
+.form .form-control {
+    margin-bottom: 15px;
+    height: 58px;
+    font-size: 18px;
+}
+
+.form h2 {
+    margin-bottom: 15px;
+}

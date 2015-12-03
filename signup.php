@@ -1,5 +1,4 @@
 <?php
-    session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,13 +29,6 @@
         <![endif]-->
     </head>
 
-    <?php
-        if(isset($_SESSION['login'])){
-    ?>
-    
-    <?php
-        } else {
-    ?>
     <form action="demo_form.asp" class="container form">
         <div class="row">
             <div class="col-xs-offset-2 col-xs-8 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
@@ -54,11 +46,6 @@
         </div>
 
     </form>
-
-    <?php 
-        }
-    ?>
-
 
 
 
