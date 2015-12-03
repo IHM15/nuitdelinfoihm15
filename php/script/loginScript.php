@@ -18,9 +18,9 @@ if (isset($_POST['mail']) && isset($_POST['mdp'])) {
     if ($mail == $user['mail'] && $passCrypted == $passCrypted['mdp']) {
         $_SESSION['mail'] = $mail;
         $_SESSION['id'] = $user['id_personne'];
-        header('Location: http://www.nuitdelinfoihm15.arnaudgrima.fr/index.php?p=login');
+        header('Location: http://localhost/nuitdelinfoihm15/index.php?p=login');
     } else {
-        header('Location: http://www.nuitdelinfoihm15.arnaudgrima.fr/login.php?p=login&r=wrong');
+        header('Location: http://localhost/nuitdelinfoihm15/index.php?p=login&r=wrong');
     }
 } else {
     echo "error";
