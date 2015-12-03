@@ -122,6 +122,13 @@ class PDOSingleton {
     }
 
     public function insertPersonne($nom, $prenom, $mail, $tel, $mdp, $dv) {
-
+        $stmt = $this->pdo->prepare('insert into personne (:nom, :prenom, :mail, :tel, :mdp, :dv)');
+        $stmt->bindParam(':nom', $nom, PDO::PARAM_STR);
+        $stmt->bindParam(':prenom',$prenom, PDO::PARAM_STR);
+        $stmt->bindParam(':mail', $mail, PDO::PARAM_STR);
+        $stmt->bindParam(':tel', $tel, PDO::PARAM_STR);
+        $stmt->bindParam(':mdp', $mdp, PDO::PARAM_STR);
+        $stmt->bindParam(':dv', $dv, PDO::PARAM_BOOL);
+        return $stmt->execute();
     }
  }
