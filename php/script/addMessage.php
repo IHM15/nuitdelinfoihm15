@@ -10,7 +10,7 @@ require_once('../model/PDOSingleton.php');
  */
 
 if (isset($_SESSION['id']) && isset($_GET['nom_evt']) && isset($_GET['date_deb'])
-    && isset($_GET['date_fin']) && isset($_GET['resume']) && isset($_GET['description']) && $_GET['id_typeEvt']) {
+    && isset($_GET['date_fin'])) {
 
     $pdo =
 
