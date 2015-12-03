@@ -29,11 +29,10 @@
         <![endif]-->
     </head>
 
-    <form action="demo_form.asp" class="container">
+    <form action="php/script/loginScript.php" class="container" method="POST">
         <div class="row">
             <div class="col-sm-6">
                 <p class="label label-default">Login :</p><br>
-
             </div>
         </div>
 
