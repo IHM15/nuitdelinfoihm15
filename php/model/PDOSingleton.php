@@ -115,14 +115,14 @@ class PDOSingleton {
 
     public function selectPersonne($login)
     {
-        $stmt = $this->pdo->prepare('select * from personne where login = :login');
+        $stmt = $this->PDOInstance->prepare('select * from personne where login = :login');
         $stmt->bindParam(':login', $login, PDO::PARAM_STR);
         $stmt->execute();
         return $stmt->fetch();
     }
 
     public function insertPersonne($nom, $prenom, $mail, $tel, $mdp, $dv) {
-        $stmt = $this->pdo->prepare('insert into personne (:nom, :prenom, :mail, :tel, :mdp, :dv)');
+        $stmt = $this->PDOInstance->prepare('insert into personne (:nom, :prenom, :mail, :tel, :mdp, :dv)');
         $stmt->bindParam(':nom', $nom, PDO::PARAM_STR);
         $stmt->bindParam(':prenom',$prenom, PDO::PARAM_STR);
         $stmt->bindParam(':mail', $mail, PDO::PARAM_STR);
@@ -133,7 +133,7 @@ class PDOSingleton {
     }
 
     public function insertEvent($nom_evt,$date_deb,$date_fin, $resume, $description, $id_typeEvt) {
-        $stmt = $this->pdo->prepare('insert into evenement (:nom_event, :date_deb, :date_fin, :resume, :description, :id_typeEvt)');
+        $stmt = $this->PDOInstance->prepare('insert into evenement (:nom_event, :date_deb, :date_fin, :resume, :description, :id_typeEvt)');
         $stmt->bindParam(':nom_event', $nom_evt, PDO::PARAM_STR);
         $stmt->bindParam(':date_deb', $date_deb, PDO::PARAM_STR);
         $stmt->bindParam(':date_fin', $date_fin, PDO::PARAM_STR);
