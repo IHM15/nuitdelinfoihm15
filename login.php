@@ -39,7 +39,7 @@
 
         <div class="col-sm-6">
 
-                <input type="text" class="form-control" placeholder="Mon Login" aria-describedby="basic-addon1"><br>
+                <input type="text" class="form-control" placeholder="Mon Login" aria-describedby="basic-addon1" name="login"><br>
 
 
         </div>
@@ -48,7 +48,7 @@
             <p class="label label-default">Mot de Passe :</p>
             </div>
             <div class="col-sm-6">
-            <input type="password" class="form-control" placeholder="************" aria-describedby="basic-addon1"><br>
+            <input type="password" class="form-control" placeholder="************" aria-describedby="basic-addon1" name="motDePasse"><br>
                 </div>
 
 
