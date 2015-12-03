@@ -142,4 +142,15 @@ class PDOSingleton {
         $stmt->bindParam('id_typeEvt', $id_typeEvt, PDO::PARAM_INT);
         return $stmt->execute();
     }
+
+    public function addMessage($id_pers,$id_evt,$time_msg,$img_blob,$text) {
+        $stmt = $this->pdo->prepare('insert into message (:id_pers, :id_evt, :time_msg, :img_blob, :text)');
+        $stmt->bindParam(':id_pers', $id_pers, PDO::PARAM_INT);
+        $stmt->bindParam(':id_evt', $id_evt , PDO::PARAM_INT);
+        $stmt->bindParam('time_msg', $time_msg, PDO::PARAM_STR);
+        $stmt->bindParam('img_blob', $img_blob, PDO::PARAM_LOB);
+        $stmt->bindParam('text', $text, PDO::PARAM_STR);
+        return $stmt->execute();
+
+    }
  }

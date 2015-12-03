@@ -10,10 +10,16 @@ require_once('../model/PDOSingleton.php');
  */
 
 if (isset($_GET['id_evt']) && isset($_GET['time_msg']) && isset($_GET['img_blob']) && isset($_GET['text'])) {
-    $id_event = $_GET['id_evt'];
-    
+    $id_evt = $_GET['id_evt'];
+    $time_msg = $_GET['time_msg'];
+    $img_blob = $_GET['img_blob'];
+    $text = $_GET['text'];
     $pdo = PDOSingleton::getInstance();
+    $message = $pdo->addMessage($_SESSION['id'],$id_evt,$time_msg,$img_blob,$text);
 
-} else {
-
+    if ($message == TRUE) {
+        header('Location: http://www.nuitdelinfoihm15.arnaudgrima.fr/home.php?p=home');
+    } else {
+        header('Location: http://www.nuitdelinfoihm15.arnaudgrima.fr/home.php?p=home&r=notinsertMessage');
+    }
 }
