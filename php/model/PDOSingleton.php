@@ -112,4 +112,16 @@ class PDOSingleton {
     {
         return $this->PDOInstance->query($query);
     }
-}
+
+    public function selectPersonne($login)
+    {
+        $stmt = $this->pdo->prepare('select * from personne where login = :login');
+        $stmt->bindParam(':login', $login, PDO::PARAM_STR);
+        $stmt->execute();
+        return $stmt->fetch();
+    }
+
+    public function insertPersonne($nom, $prenom, $mail, $tel, $mdp, $dv) {
+
+    }
+ }

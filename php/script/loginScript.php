@@ -8,14 +8,14 @@ session_start();
  * Time: 20:48
  */
 
-if (isset($_POST['login']) && isset($_POST['motDePasse'])) {
-    $login = $_POST['login'];
+if (isset($_POST['mail']) && isset($_POST['mdp'])) {
+    $mail = $_POST['login'];
     $pass = $_POST['motDePasse'];
     $pdo = PDOSingleton::getInstance();
-    $user = $pdo->query('SELECT * FROM personne WHERE mail='.$login)->fetch();
+    $user = $pdo->selectPersonne($mail);
     $passCrypted = md5($pass);
-    if ($login == $user['ID_PERS'] && $passCrypted == $passCrypted['MDP']) {
-        $_SESSION['login'] = $login;
+    if ($mail == $user['mail'] && $passCrypted == $passCrypted['mdp']) {
+        $_SESSION['mail'] = $mail;
         header('Location: http://www.nuitdelinfoihm15.arnaudgrima.fr/login.php');
     } else {
         header('Location: http://www.nuitdelinfoihm15.arnaudgrima.fr/login.php?r=wrong');
