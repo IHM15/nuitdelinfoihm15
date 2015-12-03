@@ -26,3 +26,7 @@ body {
 .form h2 {
     margin-bottom: 15px;
 }
+
+.form .checkbox {
+    margin-bottom: 15px;
+}
