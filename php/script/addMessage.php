@@ -9,10 +9,10 @@ require_once('../model/PDOSingleton.php');
  * Time: 22:35
  */
 
-if (isset($_SESSION['id']) && isset($_GET['nom_evt']) && isset($_GET['date_deb'])
-    && isset($_GET['date_fin'])) {
-
-    $pdo =
+if (isset($_GET['id_evt']) && isset($_GET['time_msg']) && isset($_GET['img_blob']) && isset($_GET['text'])) {
+    $id_event = $_GET['id_evt'];
+    
+    $pdo = PDOSingleton::getInstance();
 
 } else {
 
