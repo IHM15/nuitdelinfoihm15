@@ -1,6 +1,7 @@
 <?php
-require_once('../model/PDOSingleton.php');
 session_start();
+require_once('../model/PDOSingleton.php');
+
 /**
  * Created by PhpStorm.
  * User: nonau
@@ -16,9 +17,10 @@ if (isset($_POST['mail']) && isset($_POST['mdp'])) {
     $passCrypted = md5($pass);
     if ($mail == $user['mail'] && $passCrypted == $passCrypted['mdp']) {
         $_SESSION['mail'] = $mail;
-        header('Location: http://www.nuitdelinfoihm15.arnaudgrima.fr/login.php');
+        $_SESSION['id'] = $user['id_personne'];
+        header('Location: http://www.nuitdelinfoihm15.arnaudgrima.fr/index.php?p=login');
     } else {
-        header('Location: http://www.nuitdelinfoihm15.arnaudgrima.fr/login.php?r=wrong');
+        header('Location: http://www.nuitdelinfoihm15.arnaudgrima.fr/login.php?p=login&r=wrong');
     }
 } else {
     echo "error";

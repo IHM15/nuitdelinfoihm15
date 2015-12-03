@@ -23,7 +23,6 @@ if (isset($_POST['mail']) && isset($_POST['mdp']) && isset($_POST['nom']) && iss
         $_SESSION['mail'] = $mail;
         header('Location: http://www.nuitdelinfoihm15.arnaudgrima.fr/login.php');
     } else {
-        echo " Error : la personne n'a pas ";
         header('Location: http://www.nuitdelinfoihm15.arnaudgrima.fr/login.php?r=notinsert');
     }
 }
