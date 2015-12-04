@@ -4,7 +4,7 @@
     }
       #map {
         width: 100%;
-        height: 400px;
+        height: 600px;
         margin-bottom:20px;
       }
       .map-helper p {
