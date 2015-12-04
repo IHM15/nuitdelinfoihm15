@@ -1,0 +1,95 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway|Roboto+Slab);
+
+@dark-color : #431C00;
+@middle-color : #F1A771;
+@light-color : #EFDCCE;
+@complementary-dark-color : #003F38;
+@complementary-middle-color : #46968E;
+@complementary-light-color : #A2D3CD;
+
+/***************************************************
+ * Background & Basics
+ ***************************************************/
+html {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fcf8f4+87,efdcce+100,fcf8f4+100 */
+  background: #fcf8f4; /* Old browsers */
+  background: -moz-linear-gradient(top,  #fcf8f4 87%, #efdcce 100%, #fcf8f4 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #fcf8f4 87%,#efdcce 100%,#fcf8f4 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #fcf8f4 87%,#efdcce 100%,#fcf8f4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcf8f4', endColorstr='#fcf8f4',GradientType=0 ); /* IE6-9 */
+  height: 100%;
+}
+
+
+
+body {
+  background: transparent;
+  margin-left : 35px;
+  margin-right : 35px;
+  padding-top: 150px;
+  height: 100%;
+}
+
+
+/***************************************************
+ * Title
+ ***************************************************/
+.page-header {
+  font-family: 'Raleway', sans-serif;
+  border-bottom: none;
+
+  h1 {
+    font-size: 30px;
+    color: @middle-color;
+  }
+}
+
+/***************************************************
+ * Navbar
+ ***************************************************/
+.navbar {
+  font-family: 'Raleway', sans-serif;
+  background-color: @dark-color;
+
+  .container-fluid {
+    height: 100px;
+    line-height: 100px;
+  }
+
+  .navbar-brand {
+    height: 100px;
+    line-height: 100px;
+    color: @light-color;
+    font-size: 30px;
+  }
+
+  .navbar-nav > .active > a {
+    height: 100px;
+    line-height: 100px;
+    background-color: @dark-color;
+    color: @light-color;
+    text-transform: uppercase;
+
+    &:hover {
+      background-color: @light-color;
+      color: @dark-color;
+
+    }
+  }
+
+
+  .dropdown-toggle {
+    height: 100px;
+    line-height: 100px;
+  }
+}
+
+
+/***************************************************
+ * Forms
+ ***************************************************/
+
+
+/***************************************************
+ * Map
+ ***************************************************/
