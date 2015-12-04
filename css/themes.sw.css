@@ -6,12 +6,26 @@
 }
 
 body{
-    background: #000;
-    font: 700 1em "News Cycle", sans-serif;
+    background-image: url(../img/swmainbackgroung.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: "News Cycle";
 }
 
 h1 {
     color: #ff6;
+}
+
+/***************************************************
+ * Canvas
+ ***************************************************/
+canvas {
+  position: absolute;
+  top: 500px;
+  left: 0px;
+    right: 0px;
+    margin: 0 auto;
 }
 
 .jumbotron {
@@ -32,6 +46,7 @@ h1 {
 .navbar {
     background: transparent;
     border-bottom: transparent;
+    
 }
 
 .navbar li {
@@ -41,10 +56,22 @@ h1 {
 .navbar-brand {
     font-family: "Jedi";
     color: #FFF;
+    text-transform: lowercase;
+    text-decoration: none;
+    font-weight: 500;
+        
 }
 
 .page-header {
-    
+    padding: 5%;
+}
+
+.alert {
+    margin-left: 5%;
+    margin-right: 5%;
+    background: #FF6;
+    color: #000;
+    font-family: "News Cycle";
 }
 
 @media (min-width: 768px) {
