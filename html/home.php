@@ -8,13 +8,25 @@
  </div>
  <!-- header d'accueil -->
  <title> Accueil </title>
+
   <div class="jumbotron">
         <!-- intégration du logo en 3D -->
         <!-- TODO : include deathstar quand on a le style star wars -->
-        <?php include("earth.html"); ?>
+      <?php
+      if (isset($_COOKIE['sw']) &&  $_COOKIE['sw'] == 'theforce') {
+          echo('<a href="game.html"><button class="btn btn-primary">REJOINS LA FORCE</button></a>');
+      }
+      ?>
+      <?php
+      if (isset($_COOKIE['sw']) &&  $_COOKIE['sw'] == 'theforce') {
+          include('death_star.html');
+      }  else {
+          include("earth.html");
+      }?>
 
         <h1>Urgence et R&eacute;seaux sociaux </h1>
         <p></br>C'est ici qu'il faut venir en cas d'attaque d'alien, d'invasion de zombies ou autre catastrophes naturelles...</p>
+
   </div>
 
  <!-- PARTIE  ALERTE -->

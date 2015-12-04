@@ -63,10 +63,8 @@ error_reporting(E_ALL);
     <!-- Client-side less -->
     <?php
     if (isset($_COOKIE['sw']) &&  $_COOKIE['sw'] == 'theforce') {
-        echo('<link href="theme.css" rel="stylesheet">
-        <link href="css/themes.sw.css" rel="stylesheet">');
-        print_r('coucou');
-        setcookie('sw','theforcebouu',time()-1);
+        echo('<link href="css/themes.sw.css" rel="stylesheet">');
+        setcookie('sw','theforce',time()-1);
         echo('<script type="text/javascript">
                 document.cookie =
         "sw=theforce; expires=Fri, 3 Aug 2001 20:47:11 UTC; path=/";
@@ -110,7 +108,8 @@ error_reporting(E_ALL);
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
+                    <li class="active"><a href="?p=home">Home<span class="sr-only">(current)</span></a></li>
+                    <li class="active"><a href="?p=help">Help<span class="sr-only"></span></a></li>
                 </ul>
                 <form class="navbar-form navbar-left" role="search">
                     <div class="form-group">
@@ -126,7 +125,7 @@ error_reporting(E_ALL);
                         -->
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profil<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Mon profil</a></li>
+                            <li><a href="?p=signin">Mon profil</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="#">Déconnexion</a></li>
                         </ul>
@@ -139,7 +138,11 @@ error_reporting(E_ALL);
 <!-- Routage en mode YOLO -->
 <?php
 
-  $page = $_GET['p'];
+
+  if (isset($_GET['p'])) {
+      $page = $_GET['p'];
+  }
+
   if(isset($page)) {
     switch($page) {
       case "home" : include("html/home.php");
@@ -152,13 +155,13 @@ error_reporting(E_ALL);
         break;
            case "help" :include("html/help.html");
            break;
-      default : include("html/login.php");
+      default : include("html/home.php");
 
         break;
     }
   } else {
     // TODO : Prepare an error
-    include("html/login.php");
+    include("html/home.php");
   }
 ?>
 

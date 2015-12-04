@@ -26,6 +26,8 @@ canvas {
   left: 0px;
     right: 0px;
     margin: 0 auto;
+    height: 100px;
+    width: auto;
 }
 
 .jumbotron {
