@@ -21,7 +21,7 @@ if (isset($_POST['mail']) && isset($_POST['mdp']) && isset($_POST['nom']) && iss
     $user = $pdo->insertPersonne($nom, $prenom, $mail, $tel, $mdp, $dv);
     if ( $user == TRUE ) {
         $_SESSION['mail'] = $mail;
-        header('Location: http://nuitdelinfoihm15.arnaudgrima.frindex.php?p=home');
+        header('Location: http://nuitdelinfoihm15.arnaudgrima.fr/index.php?p=home');
     } else if ($user == null) {
         header('Location: http://nuitdelinfoihm15.arnaudgrima.fr/index.php?p=signup&r=mailAlreadyExist');
     } else {
