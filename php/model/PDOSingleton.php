@@ -129,6 +129,8 @@ class PDOSingleton {
         $stmt->bindParam(':tel', $tel, PDO::PARAM_STR);
         $stmt->bindParam(':mdp', $mdp, PDO::PARAM_STR);
         $stmt->bindParam(':dv', $dv, PDO::PARAM_BOOL);
+        if (getUser($mail)->count() == 0)
+            return null;
         return $stmt->execute();
     }
 
@@ -159,9 +161,16 @@ class PDOSingleton {
         return $stmt->fetchAll();
     }
 
-    public function getThreeLastEvents() {
-        $stmt = $this->PDOInstance->prepare('select * from evenement limit 3');
+    public function getThreeLastEvents()
+    {
+        $stmt = $this->PDOInstance->prepare('SELECT * FROM evenement LIMIT 3');
         $stmt->execute();
         return $stmt->fetchAll();
+    }
+    public function getUser($mail){
+        $stmt = $this->PDOInstance->prepare('select mail from personne WHEN mail=:mail');
+        $stmt->bindParam(":mail", $mail, PDO::PARAM_STR);
+        $stmt->execute();
+        return $stmt->fetch();
     }
  }

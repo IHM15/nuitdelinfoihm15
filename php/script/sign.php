@@ -24,6 +24,8 @@ if (isset($_POST['mail']) && isset($_POST['mdp']) && isset($_POST['nom']) && iss
     if ( $user == TRUE ) {
         $_SESSION['mail'] = $mail;
         header('Location: http://localhost/nuitdelinfoihm15/index.php?p=home');
+    } else if ($user == null) {
+        header('Location: http://localhost/nuitdelinfoihm15/index.php?p=signup&r=mailAlreadyExist');
     } else {
         header('Location: http://localhost/nuitdelinfoihm15/index.php?p=signup&r=notinsertPersonne');
     }
