@@ -24,18 +24,6 @@
 ?>
 
 
-<!-- alerte
-      <div class="alert alert-success" role="alert">
-        <strong>Warning!</strong> Du Pierre Billon est diffusé dans les rues de Los Angeles par erreur!Hollande présente ces escusse au citoyen americain ; Du Pierre Billon est diffusé dans les rues de Los Angeles par erreur!Hollande présente ces escusse au citoyen americain
-      </div>
-      <div class="alert alert-info" role="alert"
-        <strong>Alerte Meteo</strong> Demain un rayon de soleil devrait apparaitre de 12h01 à 12h03 en bretagne,prévoire de la créme solaire
-      </div>
-      <div class="alert alert-warning" role="alert">
-        <strong>Warning!</strong> Stephanie de monaco a annoncer reprendre la chanson française!des boule quiess son distribuer gratuitement dans toute les pharmacies
-      </div>
-     </div>
--->
 
  <!-- PARTIE  MAP -->
       <div class="page-header">
@@ -45,7 +33,34 @@
       <iframe width="400" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://cartosm.eu/map?lon=34.883967618713&lat=32.763011805555&zoom=1&width=400&height=350&mark=true&nav=true&pan=true&zb=inout&style=default&icon=down"></iframe>
       </div>
 
+
+
       <!-- PARTIE  PANEL -->
+      <div class="page-header">
+        <h1>informations</h1>
+      </div>
+      <div class="row">
+
+  <?php
+      $evts=$pdo->getThreeLastMessages();
+      foreach ($evt as $evt) {
+        echo('<div class="col-sm-4">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">'.$evt['nom_evt'].'</h3>
+            </div>
+            <div class="panel-body">
+           '.$evt['resumer'].'
+            </div>
+          </div>'
+      }     
+?>
+  </div>
+
+
+
+
+      <!-- PARTIE  PANEL 
       <div class="page-header">
         <h1>informations</h1>
       </div>
