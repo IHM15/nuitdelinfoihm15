@@ -6,3 +6,10 @@
  * Time: 00:31
  */
 
+require_once('../model/PDOSingleton.php');
+
+$pdo = PDOSingleton::getInstance();
+
+$messages = $pdo->getThreeLastMessages();
+
+echo json_encode($messages);

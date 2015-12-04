@@ -11,16 +11,16 @@ require_once('../model/PDOSingleton.php');
 
 if (isset($_POST['mail']) && isset($_POST['mdp'])) {
     $mail = $_POST['login'];
-    $pass = $_POST['motDePasse'];
+    $pass = $_POST['mdp'];
     $pdo = PDOSingleton::getInstance();
     $user = $pdo->selectPersonne($mail);
     $passCrypted = md5($pass);
-    if ($mail == $user['mail'] && $passCrypted == $passCrypted['mdp']) {
+    if ($mail == $user['mail'] && $passCrypted == $user['mdp']) {
         $_SESSION['mail'] = $mail;
         $_SESSION['id'] = $user['id_personne'];
         header('Location: http://localhost/nuitdelinfoihm15/index.php?p=login');
     } else {
-        header('Location: http://localhost/nuitdelinfoihm15/index.php?p=login&r=wrong');
+        //header('Location: http://localhost/nuitdelinfoihm15/index.php?p=login&r=wrong');
     }
 } else {
     echo "error";

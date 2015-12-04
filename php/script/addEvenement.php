@@ -19,8 +19,8 @@ if ( isset($_GET['nom_evt']) && isset($_GET['date_deb']) && isset($_GET['date_fi
     $event = $pdo->insertEvent($nom_evt,$date_deb,$date_fin, $resume, $description, $id_typeEvt);
 
     if ($event == TRUE) {
-        header('Location: http://www.nuitdelinfoihm15.arnaudgrima.fr/home.php?p=home');
+        header('Location: http://localhost/home.php?p=home');
     } else {
-        header('Location: http://www.nuitdelinfoihm15.arnaudgrima.fr/home.php?p=home&r=notinsertEvent');
+        header('Location: http://localhost/home.php?p=home&r=notinsertEvent');
     }
 }

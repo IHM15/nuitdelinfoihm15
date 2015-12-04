@@ -5,7 +5,7 @@
 <?php
     } else {
 ?>
-<form action="demo_form.asp" class="container form">
+<form action="php/script/sign.php" method='POST' class="container form">
     <div class="row">
         <div class="col-xs-offset-2 col-xs-8 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
             <h2>Inscription</h2>
@@ -28,7 +28,7 @@
         <div class="col-xs-offset-2 col-xs-8 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
             <div class="checkbox">
                 <label>
-                    <input type="checkbox" value="remember-me"> Cochez cette case si vous êtes déficient visuel
+                    <input type="checkbox" value="remember-me" name="dv"> Cochez cette case si vous êtes déficient visuel
                 </label>
             </div>
         </div>
