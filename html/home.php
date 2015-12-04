@@ -28,8 +28,12 @@
  <!-- PARTIE  MAP -->
       <div class="page-header">
         <h1>MAP des evenements</h1>
-      </div>      
+
+      </div>
+      <div id="map-container">
+
       <div id="map"></div>
+      </div>
 
       <!-- PARTIE  PANEL -->
       <div class="page-header">

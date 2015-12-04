@@ -30,3 +30,8 @@ body {
 .form .checkbox {
     margin-bottom: 15px;
 }
+
+.form .alert {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
