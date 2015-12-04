@@ -34,13 +34,11 @@ error_reporting(E_ALL);
       case "create-event" :  echo'<title> creation d\'evenemtent </title>';
         break;
        case "help" : echo'<title> aide </title>';  
+         break;
       default : echo'<title> Urgence et Réseaux sociaux  </title>';
         break;
     }
-  } else {
-    // TODO : Prepare an error
-    include("html/login.php");
-  }
+  } 
 ?>
 
 
