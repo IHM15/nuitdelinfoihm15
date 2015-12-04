@@ -6,16 +6,20 @@
  <div id="popAddEvenement">
      <?php include("html/createEvent.php"); ?>
  </div>
- <!-- header d'acceuil -->
+ <!-- header d'accueil -->
  <title> Accueil </title>
   <div class="jumbotron">
-        <h1>Urgence et Réseaux sociaux </h1>
-        <p></br> c'est ici qu'il faut venir en cas d'attaque d'alien,d'invasion zombie ou autre catastrophe naturelle</p>
+        <!-- intégration du logo en 3D -->
+        <!-- TODO : include deathstar quand on a le style star wars -->
+        <?php include("earth.html"); ?>
+
+        <h1>Urgence et R&eacute;seaux sociaux </h1>
+        <p></br>C'est ici qu'il faut venir en cas d'attaque d'alien, d'invasion de zombies ou autre catastrophes naturelles...</p>
   </div>
 
  <!-- PARTIE  ALERTE -->
     <div class="page-header">
-        <h1>Derniers Alerts</h1>
+        <h1>Derni&egrave;res alertes</h1>
       </div>
       <?php
       $pdo=PDOSingleton::getInstance();
@@ -32,13 +36,21 @@
 
  <!-- PARTIE  MAP -->
       <div class="page-header">
-        <h1>MAP des evenements</h1>
+        <h1>MAP des &eacute;v&egrave;nements</h1>
 
       </div>
       <div id="map-container">
 
       <div id="map"></div>
-
+      <div class="map-helper panel panel-primary">
+        <p>H - Afficher les hopitaux </p>
+        <p>A - Afficher les attentats</p>
+        <p>E - Afficher les epidemies</p>
+        <p>C - Afficher les catastrophes naturelles</p>
+        <p>P - Afficher les pandemies</p>
+        <p>I - Afficher les incendies</p>
+        <p>U - Afficher les centres d’urgences</p>
+      </div>
       <div>
           <button id="addevenemnt" type="button" class="btn btn-lg btn-default">Ajouter Evenement</button>
       </div>

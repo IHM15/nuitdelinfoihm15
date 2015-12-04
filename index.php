@@ -22,8 +22,8 @@ error_reporting(E_ALL);
 <!-- Routage en mode YOLO -->
 <?php
 
-  $page = $_GET['p'];
-  if(isset($page)) {
+  if(isset( $_GET['p'])) {
+    $page = $_GET['p'];
     switch($page) {
       case "home" : echo'<title> accueil </title>';
         break;
@@ -86,6 +86,11 @@ error_reporting(E_ALL);
 </head>
 
 <body role="document">
+<script src="js/three.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/ColladaLoader.js"></script>
+<script src="js/OrbitControls.js"></script>
+
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -107,6 +112,12 @@ error_reporting(E_ALL);
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
                 </ul>
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
 
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">

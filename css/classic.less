@@ -20,26 +20,51 @@ html {
   min-height: 100%;
 }
 
-
-
 body {
+  @media only screen and (max-width: 850px) {
+    padding-left : 0;
+    padding-right : 0;
+  }
+  padding-left : 15vw;
+  padding-right : 15vw;
   background: transparent;
-  margin-left : 15vw;
-  margin-right : 15vw;
   padding-top: 150px;
   min-height: 100%;
   background-position: left bottom;
 }
 
+/***************************************************
+ * Alerts
+ ***************************************************/
+.alert {
+  strong {
+    display: none;
+  }
+
+  background-color: #EDF2F1;
+  color: @complementary-dark-color;
+  font-family: 'Roboto Slab', serif;
+  border: none;
+  border-radius: 0;
+  -moz-box-shadow: 0px 0px 5px 1px @light-color;
+  -webkit-box-shadow: 0px 0px 5px 1px @light-color;
+  -o-box-shadow: 0px 0px 5px 1px @light-color;
+  box-shadow: 0px 0px 5px 1px @light-color;
+  filter:progid:DXImageTransform.Microsoft.Shadow(color=@light-color, Direction=NaN, Strength=5);
+}
 
 /***************************************************
  * Title
  ***************************************************/
 .page-header {
   font-family: 'Raleway', sans-serif;
-  border-bottom: none;
+  border-bottom-color: @middle-color;
+  border-bottom-style: dotted;
+  border-bottom-width: medium;
 
   h1 {
+    margin-top : 75px;
+    text-align: center;
     font-size: 30px;
     color: @middle-color;
     text-transform: capitalize;
@@ -90,6 +115,17 @@ body {
   }
 }
 
+/***************************************************
+ * Canvas
+ ***************************************************/
+canvas {
+  position: absolute;
+  top: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
 
 /***************************************************
  * Jumbotron
@@ -97,6 +133,8 @@ body {
 .jumbotron {
   background: transparent;
   text-align: center;
+  margin-top: 250px;
+
 
   h1 {
     font-family: 'Raleway', sans-serif;
@@ -112,10 +150,96 @@ body {
 }
 
 /***************************************************
- * Forms
+ * Buttons
  ***************************************************/
 
+h2 {
+  font-family: 'Raleway', sans-serif;
+  border-bottom-color: @middle-color;
+  border-bottom-style: dotted;
+  border-bottom-width: medium;
+  line-height: 70px;
+  margin-top : 75px;
+  text-align: center;
+  font-size: 30px;
+  color: @middle-color;
+  text-transform: capitalize;
+
+}
+
+.btn-primary {
+  margin : 0 auto;
+  display: block;
+  height: 65px;
+  background-color: @complementary-light-color;
+  border: none;
+  color: @complementary-dark-color;
+  -moz-box-shadow: 0px 0px 5px 1px @light-color;
+  -webkit-box-shadow: 0px 0px 5px 1px @light-color;
+  -o-box-shadow: 0px 0px 5px 1px @light-color;
+  box-shadow: 0px 0px 5px 1px @light-color;
+  filter:progid:DXImageTransform.Microsoft.Shadow(color=@light-color, Direction=NaN, Strength=5);
+
+  &:hover {
+    background-color: @complementary-middle-color;
+    color: white;
+  }
+}
 
 /***************************************************
  * Map
  ***************************************************/
+.map-helper {
+  padding: 10px;
+
+  background-color: #EDF2F1;
+  color: @complementary-dark-color;
+  font-family: 'Roboto Slab', serif;
+  border: none;
+  border-radius: 0;
+
+}
+
+#addevenemnt {
+  height: 65px;
+  background-color: @complementary-light-color;
+  border: none;
+  color: @complementary-dark-color;
+  -moz-box-shadow: 0px 0px 5px 1px @light-color;
+  -webkit-box-shadow: 0px 0px 5px 1px @light-color;
+  -o-box-shadow: 0px 0px 5px 1px @light-color;
+  box-shadow: 0px 0px 5px 1px @light-color;
+  filter:progid:DXImageTransform.Microsoft.Shadow(color=@light-color, Direction=NaN, Strength=5);
+
+  &:hover {
+    background-color: @complementary-middle-color;
+    color: white;
+  }
+}
+
+/***************************************************
+ * Pannels
+ ***************************************************/
+.panel-primary {
+  background-color: #EDF2F1;
+  color: @complementary-dark-color;
+  font-family: 'Roboto Slab', serif;
+  border: none;
+  border-radius: 0;
+  border-color: @complementary-middle-color;
+  -moz-box-shadow: 0px 0px 5px 1px @light-color;
+  -webkit-box-shadow: 0px 0px 5px 1px @light-color;
+  -o-box-shadow: 0px 0px 5px 1px @light-color;
+  box-shadow: 0px 0px 5px 1px @light-color;
+  filter:progid:DXImageTransform.Microsoft.Shadow(color=@light-color, Direction=NaN, Strength=5);
+
+
+  .panel-heading {
+    background-color: transparent;
+    color: @complementary-dark-color;
+    border-bottom-color: @complementary-dark-color;
+  }
+
+  .panel-body {
+  }
+}
