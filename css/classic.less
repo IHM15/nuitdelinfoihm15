@@ -23,9 +23,19 @@ html {
 
 
 body {
+  @media only screen and (max-width: 1150px) {
+    margin-left : 15vw;
+    margin-right : 15vw;
+  }
+  @media only screen and (max-width: 950px) {
+    margin-left : 15vw;
+    margin-right : 15vw;
+  }
+  @media only screen and (max-width: 850px) {
+    margin-left : 0vw;
+    margin-right : 0vw;
+  }
   background: transparent;
-  margin-left : 15vw;
-  margin-right : 15vw;
   padding-top: 150px;
   min-height: 100%;
   background-position: left bottom;
@@ -95,11 +105,11 @@ body {
  ***************************************************/
 canvas {
   position: absolute;
-  top: 100px;
-  left: 0px;
-  z-index:0;
-  width: 80%;
-  height: 100px;
+  top: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
 }
 
 /***************************************************
@@ -108,7 +118,8 @@ canvas {
 .jumbotron {
   background: transparent;
   text-align: center;
-  z-index: 99999;
+  margin-top: 250px;
+
 
   h1 {
     font-family: 'Raleway', sans-serif;
