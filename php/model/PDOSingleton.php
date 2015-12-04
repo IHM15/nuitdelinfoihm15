@@ -133,7 +133,7 @@ class PDOSingleton {
     }
 
     public function insertEvent($nom_evt,$date_deb,$date_fin, $resume, $description, $id_typeEvt) {
-        $stmt = $this->PDOInstance->prepare('insert into evenement values(:nom_event, :date_deb, :date_fin, :resume, :description, :id_typeEvt)');
+        $stmt = $this->PDOInstance->prepare('insert into evenement (`nom_evt`,`date_deb`,`date_fin`,`resumer`,`description`,`ide_typeEvt`) values (:nom_event, :date_deb, :date_fin, :resume, :description, :id_typeEvt)');
         $stmt->bindParam(':nom_event', $nom_evt, PDO::PARAM_STR);
         $stmt->bindParam(':date_deb', $date_deb, PDO::PARAM_STR);
         $stmt->bindParam(':date_fin', $date_fin, PDO::PARAM_STR);
@@ -144,7 +144,7 @@ class PDOSingleton {
     }
 
     public function addMessage($id_pers,$id_evt,$time_msg,$img_blob,$text) {
-        $stmt = $this->PDOInstance->prepare('insert into message values ( :id_pers, :id_evt, :time_msg, :img_blob, :text)');
+        $stmt = $this->PDOInstance->prepare('insert into message (`id_pers`, `id_evt`, `time_msg`, `img_blob`, `txt`) values ( :id_pers, :id_evt, :time_msg, :img_blob, :text)');
         $stmt->bindParam(':id_pers', $id_pers, PDO::PARAM_INT);
         $stmt->bindParam(':id_evt', $id_evt , PDO::PARAM_INT);
         $stmt->bindParam('time_msg', $time_msg, PDO::PARAM_STR);
