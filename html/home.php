@@ -6,20 +6,20 @@
  <div id="popAddEvenement">
      <?php include("html/createEvent.php"); ?>
  </div>
- <!-- header d'acceuil -->
+ <!-- header d'accueil -->
  <title> Accueil </title>
   <div class="jumbotron">
         <!-- intégration du logo en 3D -->
         <!-- TODO : include deathstar quand on a le style star wars -->
         <?php include("earth.html"); ?>
 
-        <h1>Urgence et Réseaux sociaux </h1>
-        <p></br> c'est ici qu'il faut venir en cas d'attaque d'alien,d'invasion zombie ou autre catastrophe naturelle</p>
+        <h1>Urgence et R&eacute;seaux sociaux </h1>
+        <p></br>C'est ici qu'il faut venir en cas d'attaque d'alien, d'invasion de zombies ou autre catastrophes naturelles...</p>
   </div>
 
  <!-- PARTIE  ALERTE -->
     <div class="page-header">
-        <h1>Derniers Alerts</h1>
+        <h1>Derni&egrave;res alertes</h1>
       </div>
       <?php
       $pdo=PDOSingleton::getInstance();
@@ -36,7 +36,7 @@
 
  <!-- PARTIE  MAP -->
       <div class="page-header">
-        <h1>MAP des evenements</h1>
+        <h1>MAP des &eacute;v&egrave;nements</h1>
 
       </div>
       <div id="map-container">

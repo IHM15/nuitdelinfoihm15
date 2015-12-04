@@ -37,9 +37,19 @@ body {
  * Alerts
  ***************************************************/
 .alert {
-  background-color: #D9F7F1;
-  color: @complementary-middle-color;
-  border-color: @complementary-middle-color;
+  strong {
+    display: none;
+  }
+
+  background-color: #EDF2F1;
+  color: @complementary-dark-color;
+  border: none;
+  border-radius: 0;
+  -moz-box-shadow: 0px 0px 5px 1px @light-color;
+  -webkit-box-shadow: 0px 0px 5px 1px @light-color;
+  -o-box-shadow: 0px 0px 5px 1px @light-color;
+  box-shadow: 0px 0px 5px 1px @light-color;
+  filter:progid:DXImageTransform.Microsoft.Shadow(color=@light-color, Direction=NaN, Strength=5);
 }
 
 /***************************************************
