@@ -1,6 +1,6 @@
 
  <?php
- require_once ('../php/model/PDOSingleton.php');
+ require_once ('php/model/PDOSingleton.php');
 ?>
 
  <!-- header d'acceuil -->
@@ -15,13 +15,14 @@
       </div>
       <?php
       $pdo=PDOSingleton::getInstance();
-      $alerts=$pdo->getAlerts();
+      $alerts=$pdo->getThreeLastMessages();
       foreach ($alerts as $alert) {
       	echo('<div class="alert alert-success" role="alert">
         <strong>Warning!</strong> '.$alert['txt'].'
       	</div>');	
-      }
-      ?>
+      }     
+?>
+
 
 <!-- alerte
       <div class="alert alert-success" role="alert">
@@ -41,7 +42,7 @@
         <h1>MAP des evenements</h1>
       </div>
       <div class="well">
-<iframe width="400" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://cartosm.eu/map?lon=34.883967618713&lat=32.763011805555&zoom=1&width=400&height=350&mark=true&nav=true&pan=true&zb=inout&style=default&icon=down"></iframe>
+      <iframe width="400" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://cartosm.eu/map?lon=34.883967618713&lat=32.763011805555&zoom=1&width=400&height=350&mark=true&nav=true&pan=true&zb=inout&style=default&icon=down"></iframe>
       </div>
 
       <!-- PARTIE  PANEL -->
@@ -49,29 +50,6 @@
         <h1>informations</h1>
       </div>
       <div class="row">
-
-  <?php
-      $pdo=PDOSingleton::getInstance();
-      $Evenement=$pdo->getEvenement();
-
-      foreach ( $Evenement as $var) {
-      	echo('
-  <div class="col-sm-4">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title">'.$alert['nom_evt'].'</h3>
-            </div>
-            <div class="panel-body">'
-				.$alert['resumer'].'
-            </div>
-          </div>
-'
-      		);	
-      }
-      ?>
-
-
-<!-- info
         <div class="col-sm-4">
           <div class="panel panel-default">
             <div class="panel-heading">

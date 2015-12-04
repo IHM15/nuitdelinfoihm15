@@ -115,14 +115,14 @@ class PDOSingleton {
 
     public function selectPersonne($login)
     {
-        $stmt = $this->PDOInstance->prepare('select * from personne where login = :login');
+        $stmt = $this->PDOInstance->prepare('select * from personne where mail = :login');
         $stmt->bindParam(':login', $login, PDO::PARAM_STR);
         $stmt->execute();
         return $stmt->fetch();
     }
 
     public function insertPersonne($nom, $prenom, $mail, $tel, $mdp, $dv) {
-        $stmt = $this->PDOInstance->prepare('insert into personne (:nom, :prenom, :mail, :tel, :mdp, :dv)');
+        $stmt = $this->PDOInstance->prepare('insert into personne (`nom`, `prenom`, `mail`, `tel`, `mdp`, `dv`) values (:nom, :prenom, :mail, :tel, :mdp, :dv)');
         $stmt->bindParam(':nom', $nom, PDO::PARAM_STR);
         $stmt->bindParam(':prenom',$prenom, PDO::PARAM_STR);
         $stmt->bindParam(':mail', $mail, PDO::PARAM_STR);
@@ -133,7 +133,7 @@ class PDOSingleton {
     }
 
     public function insertEvent($nom_evt,$date_deb,$date_fin, $resume, $description, $id_typeEvt) {
-        $stmt = $this->PDOInstance->prepare('insert into evenement (:nom_event, :date_deb, :date_fin, :resume, :description, :id_typeEvt)');
+        $stmt = $this->PDOInstance->prepare('insert into evenement (`nom_evt`,`date_deb`,`date_fin`,`resumer`,`description`,`ide_typeEvt`) values (:nom_event, :date_deb, :date_fin, :resume, :description, :id_typeEvt)');
         $stmt->bindParam(':nom_event', $nom_evt, PDO::PARAM_STR);
         $stmt->bindParam(':date_deb', $date_deb, PDO::PARAM_STR);
         $stmt->bindParam(':date_fin', $date_fin, PDO::PARAM_STR);
@@ -144,13 +144,18 @@ class PDOSingleton {
     }
 
     public function addMessage($id_pers,$id_evt,$time_msg,$img_blob,$text) {
-        $stmt = $this->pdo->prepare('insert into message (:id_pers, :id_evt, :time_msg, :img_blob, :text)');
+        $stmt = $this->PDOInstance->prepare('insert into message (`id_pers`, `id_evt`, `time_msg`, `img_blob`, `txt`) values ( :id_pers, :id_evt, :time_msg, :img_blob, :text)');
         $stmt->bindParam(':id_pers', $id_pers, PDO::PARAM_INT);
         $stmt->bindParam(':id_evt', $id_evt , PDO::PARAM_INT);
         $stmt->bindParam('time_msg', $time_msg, PDO::PARAM_STR);
         $stmt->bindParam('img_blob', $img_blob, PDO::PARAM_LOB);
         $stmt->bindParam('text', $text, PDO::PARAM_STR);
         return $stmt->execute();
+    }
 
+    public function getThreeLastMessages() {
+        $stmt = $this->PDOInstance->prepare('select * from message limit 3');
+        $stmt->execute();
+        return $stmt->fetchAll();
     }
  }
