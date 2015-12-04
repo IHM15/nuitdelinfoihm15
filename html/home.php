@@ -42,7 +42,15 @@
       <div id="map-container">
 
       <div id="map"></div>
-
+      <div class="map-helper panel panel-primary">
+        <p>H - Afficher les hopitaux </p>
+        <p>A - Afficher les attentats</p>
+        <p>E - Afficher les epidemies</p>
+        <p>C - Afficher les catastrophes naturelles</p>
+        <p>P - Afficher les pandemies</p>
+        <p>I - Afficher les incendies</p>
+        <p>U - Afficher les centres d’urgences</p>
+      </div>
       <div>
           <button id="addevenemnt" type="button" class="btn btn-lg btn-default">Ajouter Evenement</button>
       </div>
