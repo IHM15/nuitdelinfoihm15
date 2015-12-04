@@ -1,6 +1,7 @@
 <?php
-require_once('../model/PDOSingleton.php');
 session_start();
+require_once('../model/PDOSingleton.php');
+
 /**
  * Created by PhpStorm.
  * User: nonau
@@ -8,17 +9,18 @@ session_start();
  * Time: 20:48
  */
 
-if (isset($_POST['login']) && isset($_POST['motDePasse'])) {
-    $login = $_POST['login'];
-    $pass = $_POST['motDePasse'];
+if (isset($_POST['mail']) && isset($_POST['mdp'])) {
+    $mail = $_POST['login'];
+    $pass = $_POST['mdp'];
     $pdo = PDOSingleton::getInstance();
-    $user = $pdo->query('SELECT * FROM personne WHERE mail='.$login)->fetch();
+    $user = $pdo->selectPersonne($mail);
     $passCrypted = md5($pass);
-    if ($login == $user['ID_PERS'] && $passCrypted == $passCrypted['MDP']) {
-        $_SESSION['login'] = $login;
-        header('Location: http://www.nuitdelinfoihm15.arnaudgrima.fr/login.php');
+    if ($mail == $user['mail'] && $passCrypted == $user['mdp']) {
+        $_SESSION['mail'] = $mail;
+        $_SESSION['id'] = $user['id_personne'];
+        header('Location: http://localhost/nuitdelinfoihm15/index.php?p=login');
     } else {
-        header('Location: http://www.nuitdelinfoihm15.arnaudgrima.fr/login.php?r=wrong');
+        //header('Location: http://localhost/nuitdelinfoihm15/index.php?p=login&r=wrong');
     }
 } else {
     echo "error";
