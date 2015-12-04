@@ -73,6 +73,15 @@ function checkEventObj ( _event_ ) {
 	I - Afficher les incendies
 	U - Afficher les centres d’urgences
 */
+function changeColor (color) {	
+				map.data.setStyle(function(feature) {
+			    var magnitude = feature.getProperty('mag');
+			    return {
+			      icon: getCircle1(magnitude, color)
+			    };
+			  });
+			}
+
 function applyKey (_event_) {
 	// Retrieve event object from web explorer
 	var winObj = checkEventObj(_event_);
@@ -82,31 +91,33 @@ function applyKey (_event_) {
 	// No combination with ctrl or Alt	
 	if (!(intAltKey || intCtrlKey)) {
 			if ( intKeyCode == KEY_H  ) {
-				alert("Afficher les hopitaux");
+				changeColor("red");
 			}
 			else if ( intKeyCode == KEY_A ) {
-				alert("Afficher les attentats");
+					changeColor("green");
 			}
 			else if ( intKeyCode == KEY_E ) {
-				alert("Afficher les epidemies");
+					changeColor("orange");
 			}
 			else if ( intKeyCode == KEY_C ) {
-				alert("Afficher les catastrophes naturelles");
+					changeColor("brown");
 			}
 			else if ( intKeyCode == KEY_P ) {
-				alert("Afficher les pandemies");
+					changeColor("violet");
 			}
 			else if ( intKeyCode == KEY_I ) {
-				alert("Afficher les incendies");
+				changeColor("yellow");
 			}
 			else if ( intKeyCode == KEY_U ) {
-				alert("Afficher les centres d’urgences");
+				changeColor("pink");
 			}
 			winObj.keyCode = intKeyCode = REMAP_KEY_T;
 			winObj.returnValue = false;
 			return false;	
 	}
 }
+
+
 $( "body" ).keypress(function() {
   console.log( "Handler for .keypress() called." );
 });

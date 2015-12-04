@@ -25,15 +25,36 @@
   map.data.setStyle(function(feature) {
     var magnitude = feature.getProperty('mag');
     return {
-      icon: getCircle(magnitude)
+      icon: getCircle(magnitude, 'red')
     };
   });
 }
 
-function getCircle(magnitude) {
+function getCircle(magnitude, color) {
+  var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+  var marker = new google.maps.Marker({
+    position: myLatLng,
+    map: map,
+    icon: iconBase + 'schools_maps.png'
+  });
+}
+
+function getCircle1(magnitude, color) {
   var circle = {
     path: google.maps.SymbolPath.CIRCLE,
-    fillColor: 'red',
+    fillColor: color,
+    fillOpacity: .2,
+    scale: Math.pow(2, magnitude) / 2,
+    strokeColor: 'white',
+    strokeWeight: .5
+  };
+  return circle;
+}
+
+function getCircle2(magnitude, color) {
+  var circle = {
+    path: google.maps.SymbolPath.CIRCLE,
+    fillColor: color,
     fillOpacity: .2,
     scale: Math.pow(2, magnitude) / 2,
     strokeColor: 'white',
