@@ -19,12 +19,13 @@ if (isset($_POST['mail']) && isset($_POST['mdp']) && isset($_POST['nom']) && iss
     $dv = isset($_POST['dv']) ? true : false;
     $pdo = PDOSingleton::getInstance();
     print_r("test");
+    $mdp = md5($mdp);
     $user = $pdo->insertPersonne($nom, $prenom, $mail, $tel, $mdp, $dv);
     if ( $user == TRUE ) {
         $_SESSION['mail'] = $mail;
-        header('Location: http://www.nuitdelinfoihm15.arnaudgrima.fr/index.php?p=home');
+        header('Location: http://localhost/nuitdelinfoihm15/index.php?p=home');
     } else {
-        header('Location: http://www.nuitdelinfoihm15.arnaudgrima.fr/index.php?p=signup&r=notinsertPersonne');
+        header('Location: http://localhost/nuitdelinfoihm15/index.php?p=signup&r=notinsertPersonne');
     }
 } else {
     echo "error";
