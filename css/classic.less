@@ -168,9 +168,6 @@ h2 {
 }
 
 .btn-primary {
-  margin : 0 auto;
-  display: block;
-  height: 65px;
   background-color: @complementary-light-color;
   border: none;
   color: @complementary-dark-color;
@@ -182,6 +179,22 @@ h2 {
 
   &:hover {
     background-color: @complementary-middle-color;
+    color: white;
+  }
+}
+
+.btn-default {
+  background-color: white;
+  border: none;
+  color: @complementary-dark-color;
+  -moz-box-shadow: 0px 0px 5px 1px @light-color;
+  -webkit-box-shadow: 0px 0px 5px 1px @light-color;
+  -o-box-shadow: 0px 0px 5px 1px @light-color;
+  box-shadow: 0px 0px 5px 1px @light-color;
+  filter:progid:DXImageTransform.Microsoft.Shadow(color=@light-color, Direction=NaN, Strength=5);
+
+  &:hover {
+    background-color: @complementary-dark-color;
     color: white;
   }
 }
@@ -220,18 +233,20 @@ h2 {
 /***************************************************
  * Pannels
  ***************************************************/
-.panel-primary {
-  background-color: #EDF2F1;
-  color: @complementary-dark-color;
+.panel-primary, .panel-success {
   font-family: 'Roboto Slab', serif;
-  border: none;
   border-radius: 0;
-  border-color: @complementary-middle-color;
+  border: none;
   -moz-box-shadow: 0px 0px 5px 1px @light-color;
   -webkit-box-shadow: 0px 0px 5px 1px @light-color;
   -o-box-shadow: 0px 0px 5px 1px @light-color;
   box-shadow: 0px 0px 5px 1px @light-color;
   filter:progid:DXImageTransform.Microsoft.Shadow(color=@light-color, Direction=NaN, Strength=5);
+}
+
+.panel-primary {
+  background-color: #EDF2F1;
+  color: @complementary-dark-color;
 
 
   .panel-heading {
@@ -239,7 +254,39 @@ h2 {
     color: @complementary-dark-color;
     border-bottom-color: @complementary-dark-color;
   }
+}
 
-  .panel-body {
+.panel-success {
+  background-color: #EAE3DE;
+  color: @dark-color;
+
+
+  .panel-heading {
+    background-color: transparent;
+    color: @dark-color;
+    border-bottom-color: @dark-color;
   }
+}
+
+
+/***************************************************
+ * Modal
+ ***************************************************/
+#formaddevent {
+  margin-top: 0;
+}
+
+input, textarea, select {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  min-height: 40px;
+  line-height: 40px;
+}
+
+label {
+  line-height: 40px;
+  color: @complementary-dark-color;
+  font-family: 'Roboto Slab', serif;
+  font-size: 20px;
+
 }
