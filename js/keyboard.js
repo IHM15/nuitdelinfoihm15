@@ -52,7 +52,7 @@ KEY_PF7		= 118;
 KEY_PF8		= 119;
 				
 // Only on map element
-$( "#map" ).onkeydown = applyKey;
+document.onkeydown = applyKey;
 
 function checkEventObj ( _event_ ) {
 	// For IE explorer
@@ -64,7 +64,15 @@ function checkEventObj ( _event_ ) {
 		return _event_;
 	}
 }
-
+/*
+	H - Afficher les hopitaux
+	A - Afficher les attentats
+	E - Afficher les epidemies
+	C - Afficher les catastrophes naturelles
+	P - Afficher les pandemies
+	I - Afficher les incendies
+	U - Afficher les centres d’urgences
+*/
 function applyKey (_event_) {
 	// Retrieve event object from web explorer
 	var winObj = checkEventObj(_event_);
@@ -73,22 +81,30 @@ function applyKey (_event_) {
 	var intCtrlKey = winObj.ctrlKey;
 	// No combination with ctrl or Alt	
 	if (!(intAltKey || intCtrlKey)) {
-		if (intKeyCode == KEY_RIGHT 
-			|| intKeyCode == KEY_LEFT 
-				|| intKeyCode == KEY_ESC){
-			if ( intKeyCode == KEY_RIGHT  ) {
-				alert("this works");
+			if ( intKeyCode == KEY_H  ) {
+				alert("Afficher les hopitaux");
 			}
-			else if ( intKeyCode == KEY_LEFT ) {
-				alert("this works");
+			else if ( intKeyCode == KEY_A ) {
+				alert("Afficher les attentats");
 			}
-			else if ( intKeyCode == KEY_ESC ) {
-				alert("this works");
+			else if ( intKeyCode == KEY_E ) {
+				alert("Afficher les epidemies");
+			}
+			else if ( intKeyCode == KEY_C ) {
+				alert("Afficher les catastrophes naturelles");
+			}
+			else if ( intKeyCode == KEY_P ) {
+				alert("Afficher les pandemies");
+			}
+			else if ( intKeyCode == KEY_I ) {
+				alert("Afficher les incendies");
+			}
+			else if ( intKeyCode == KEY_U ) {
+				alert("Afficher les centres d’urgences");
 			}
 			winObj.keyCode = intKeyCode = REMAP_KEY_T;
 			winObj.returnValue = false;
 			return false;	
-		}
 	}
 }
 $( "body" ).keypress(function() {

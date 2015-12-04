@@ -129,6 +129,9 @@ class PDOSingleton {
         $stmt->bindParam(':tel', $tel, PDO::PARAM_STR);
         $stmt->bindParam(':mdp', $mdp, PDO::PARAM_STR);
         $stmt->bindParam(':dv', $dv, PDO::PARAM_BOOL);
+        print_r($this->getUser($mail));
+        if ($this->getUser($mail))
+            return null;
         return $stmt->execute();
     }
 
@@ -138,8 +141,8 @@ class PDOSingleton {
         $stmt->bindParam(':date_deb', $date_deb, PDO::PARAM_STR);
         $stmt->bindParam(':date_fin', $date_fin, PDO::PARAM_STR);
         $stmt->bindParam(':resume', $resume, PDO::PARAM_STR);
-        $stmt->bindParam('descirption',$description, PDO::PARAM_STR);
-        $stmt->bindParam('id_typeEvt', $id_typeEvt, PDO::PARAM_INT);
+        $stmt->bindParam(':descirption',$description, PDO::PARAM_STR);
+        $stmt->bindParam(':id_typeEvt', $id_typeEvt, PDO::PARAM_INT);
         return $stmt->execute();
     }
 
@@ -148,8 +151,8 @@ class PDOSingleton {
         $stmt->bindParam(':id_pers', $id_pers, PDO::PARAM_INT);
         $stmt->bindParam(':id_evt', $id_evt , PDO::PARAM_INT);
         $stmt->bindParam('time_msg', $time_msg, PDO::PARAM_STR);
-        $stmt->bindParam('img_blob', $img_blob, PDO::PARAM_LOB);
-        $stmt->bindParam('text', $text, PDO::PARAM_STR);
+        $stmt->bindParam(':img_blob', $img_blob, PDO::PARAM_LOB);
+        $stmt->bindParam(':text', $text, PDO::PARAM_STR);
         return $stmt->execute();
     }
 
@@ -157,5 +160,18 @@ class PDOSingleton {
         $stmt = $this->PDOInstance->prepare('select * from message limit 3');
         $stmt->execute();
         return $stmt->fetchAll();
+    }
+
+    public function getThreeLastEvents()
+    {
+        $stmt = $this->PDOInstance->prepare('SELECT * FROM evenement LIMIT 3');
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+    public function getUser($mail){
+        $stmt = $this->PDOInstance->prepare('select mail from personne where mail=:mail');
+        $stmt->bindParam(':mail', $mail, PDO::PARAM_STR);
+        $stmt->execute();
+        return $stmt->fetch();
     }
  }
