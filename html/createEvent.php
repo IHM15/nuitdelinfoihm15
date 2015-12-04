@@ -47,16 +47,16 @@
         <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
         <button type="submit" class="btn btn-primary">Signaler l'&eacute;v&egrave;nement</button>
       </div>
-    </div>!-- /.modal-content -->
-  </div>!-- /.modal-dialog -->
+    </div>!-- /.modal-content --
+  </div>!-- /.modal-dialog --
 </div>!-- /.modal -->
 
-<form>
-  <div class="form-group col-xs-offset-2 col-xs-8 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+<form id="formaddevent">
+  <div class="form-group first-elem col-md-8 col-md-offset-2">
     <label for="inputEventName">Nom de l'&eacute;v&egrave;nement</label>
     <input type="text" class="form-control" id="inputEventName" placeholder="Tapez ici le nom de l'&eacute;v&egrave;nement">
   </div>
-  <div class="form-inline col-xs-offset-2 col-xs-8 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+  <div class="form-inline col-md-8 col-md-offset-2">
     <div>
       <div class="form-group">
         <label for="inputEventBeginDate">D&eacute;but &agrave;</label>
@@ -68,12 +68,12 @@
       </div>
     </div>
   </div>
-  <div class="form-group col-xs-offset-2 col-xs-8 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+  <div class="form-group col-md-8 col-md-offset-2">
     <label for="inputEventDescription">Description</label>
     <textarea class="form-control" rows="3" id="inputEventDescription"></textarea>
     <p class="help-block">Rentrez ici une description de l'&eacute;v&egrave;nement.</p>
   </div>
-  <div class="form-group col-xs-offset-2 col-xs-8 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+  <div class="form-group col-md-8 col-md-offset-2">
     <label for="inputEventType">Type d'&eacute;v&egrave;nement</label>
     <select id="inputEventType">
       <option value="cata">Catastrophe naturelle</option>
@@ -81,8 +81,8 @@
       <option value="autre">Autre</option>
     </select>
   </div>
-  <div class="col-xs-offset-2 col-xs-8 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
-     <button type="submit" class="btn btn-default">Annuler</button>
+  <div class="col-md-8 col-md-offset-2">
+     <button id="cancelAddEvent" class="btn btn-default">Annuler</button>
      <button type="submit" class="btn btn-primary">Signaler l'&eacute;v&egrave;nement</button>
  </div>
 </form>

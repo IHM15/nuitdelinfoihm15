@@ -26,6 +26,7 @@ error_reporting(E_ALL);
     <link href="css/bootstrap-theme.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="theme.css" rel="stylesheet">
+    <link href="css/popAddEventCss.css"  rel="stylesheet">
 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -112,6 +113,7 @@ error_reporting(E_ALL);
 
 <?php } ?>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/addevenement.js"></script>
 <script src="js/ie10-viewport-bug-workaround.js"></script>
 </body>
 </html>
