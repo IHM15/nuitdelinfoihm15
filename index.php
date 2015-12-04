@@ -72,6 +72,11 @@ error_reporting(E_ALL);
 </head>
 
 <body role="document">
+<script src="js/three.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/ColladaLoader.js"></script>
+<script src="js/OrbitControls.js"></script>
+
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->

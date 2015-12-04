@@ -9,6 +9,10 @@
  <!-- header d'acceuil -->
  <title> Accueil </title>
   <div class="jumbotron">
+        <!-- intégration du logo en 3D -->
+        <!-- TODO : include deathstar quand on a le style star wars -->
+        <?php include("earth.html"); ?>
+
         <h1>Urgence et Réseaux sociaux </h1>
         <p></br> c'est ici qu'il faut venir en cas d'attaque d'alien,d'invasion zombie ou autre catastrophe naturelle</p>
   </div>
