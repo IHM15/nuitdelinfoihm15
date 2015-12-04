@@ -52,7 +52,7 @@ KEY_PF7		= 118;
 KEY_PF8		= 119;
 				
 // Only on map element
-$( "#map" ).onkeydown = applyKey;
+$( "#map-container" ).onkeydown = applyKey;
 
 function checkEventObj ( _event_ ) {
 	// For IE explorer
@@ -66,6 +66,8 @@ function checkEventObj ( _event_ ) {
 }
 
 function applyKey (_event_) {
+				alert("this works");
+
 	// Retrieve event object from web explorer
 	var winObj = checkEventObj(_event_);
 	var intKeyCode = winObj.keyCode;
