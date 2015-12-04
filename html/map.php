@@ -1,8 +1,16 @@
     <style>
+    #map-content {
+      width: 100%;
+    }
       #map {
-        width: 500px;
+        width: 100%;
         height: 400px;
+        margin-bottom:20px;
       }
+      .map-helper p {
+        margin-left: 10px;
+      }
+
     </style>
     <script src="https://maps.googleapis.com/maps/api/js"></script>
     <script>

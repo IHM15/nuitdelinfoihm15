@@ -20,17 +20,37 @@ html {
   min-height: 100%;
 }
 
-
-
 body {
-  background: transparent;
+  @media only screen and (max-width: 850px) {
+    margin-left : 0;
+    margin-right : 0;
+  }
   margin-left : 15vw;
   margin-right : 15vw;
+  background: transparent;
   padding-top: 150px;
   min-height: 100%;
   background-position: left bottom;
 }
 
+/***************************************************
+ * Alerts
+ ***************************************************/
+.alert {
+  strong {
+    display: none;
+  }
+
+  background-color: #EDF2F1;
+  color: @complementary-dark-color;
+  border: none;
+  border-radius: 0;
+  -moz-box-shadow: 0px 0px 5px 1px @light-color;
+  -webkit-box-shadow: 0px 0px 5px 1px @light-color;
+  -o-box-shadow: 0px 0px 5px 1px @light-color;
+  box-shadow: 0px 0px 5px 1px @light-color;
+  filter:progid:DXImageTransform.Microsoft.Shadow(color=@light-color, Direction=NaN, Strength=5);
+}
 
 /***************************************************
  * Title
@@ -95,11 +115,11 @@ body {
  ***************************************************/
 canvas {
   position: absolute;
-  top: 100px;
-  left: 0px;
-  z-index:0;
-  width: 80%;
-  height: 100px;
+  top: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
 }
 
 /***************************************************
@@ -108,7 +128,8 @@ canvas {
 .jumbotron {
   background: transparent;
   text-align: center;
-  z-index: 99999;
+  margin-top: 250px;
+
 
   h1 {
     font-family: 'Raleway', sans-serif;

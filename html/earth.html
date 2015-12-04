@@ -6,7 +6,7 @@
 
 		var renderer = new THREE.WebGLRenderer( {alpha: true });
 		renderer.setClearColor( 0x000000, 0);
-		renderer.setSize( 800, 300);
+		renderer.setSize( window.innerWidth/2.5, window.innerHeight/2.5);
 		document.body.appendChild( renderer.domElement );
 
 		var loader = new THREE.ColladaLoader();
@@ -52,7 +52,7 @@
 			camera.aspect = window.innerWidth / window.innerHeight;
 			camera.updateProjectionMatrix();
 
-			renderer.setSize( window.innerWidth, window.innerHeight );
+			renderer.setSize( window.innerWidth/2.5, window.innerHeight/2.5 );
 
 		};
 
