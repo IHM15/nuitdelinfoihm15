@@ -18,8 +18,8 @@ if (isset($_GET['id_evt']) && isset($_GET['time_msg']) && isset($_GET['img_blob'
     $message = $pdo->addMessage($_SESSION['id'],$id_evt,$time_msg,$img_blob,$text);
 
     if ($message == TRUE) {
-        header('Location: http://localhost/nuitdelinfoihm15/home.php?p=home');
+        header('Location: http://nuitdelinfoihm15.arnaudgrima.fr/?p=home');
     } else {
-        header('Location: http://localhost/nuitdelinfoihm15/home.php?p=home&r=notinsertMessage');
+        header('Location: http://nuitdelinfoihm15.arnaudgrima.fr/?p=home&r=notinsertMessage');
     }
 }
