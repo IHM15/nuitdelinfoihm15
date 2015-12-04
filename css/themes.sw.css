@@ -1,0 +1,87 @@
+@import url(http://fonts.googleapis.com/css?family=News+Cycle:400,700);
+
+@font-face { 
+  font-family: 'Jedi'; 
+  src: url('../fonts/STJEDISE.TTF'); 
+}
+
+body{
+    background-image: url(../img/swmainbackgroung.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: "News Cycle";
+}
+
+h1 {
+    color: #ff6;
+}
+
+/***************************************************
+ * Canvas
+ ***************************************************/
+canvas {
+  position: absolute;
+  top: 500px;
+  left: 0px;
+    right: 0px;
+    margin: 0 auto;
+}
+
+.jumbotron {
+    text-align: center;
+    padding-top: 100px;
+    background-image:url(../img/swbackground.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #FFF;
+}
+
+.jumbotron h1 {
+    text-align: center;
+    font-family: "Jedi";
+    text-transform: lowercase;
+}
+
+.navbar {
+    background: transparent;
+    border-bottom: transparent;
+    
+}
+
+.navbar li {
+    
+}
+
+.navbar-brand {
+    font-family: "Jedi";
+    color: #FFF;
+    text-transform: lowercase;
+    text-decoration: none;
+    font-weight: 500;
+        
+}
+
+.page-header {
+    padding: 5%;
+}
+
+.alert {
+    margin-left: 5%;
+    margin-right: 5%;
+    background: #FF6;
+    color: #000;
+    font-family: "News Cycle";
+}
+
+@media (min-width: 768px) {
+    .jumbotron h1 {
+        font-size: 80px;    
+    }
+}
+
+@media (min-width: 992px) {
+    .jumbotron h1 {
+        font-size: 100px;    
+    }
+}
