@@ -20,7 +20,7 @@ if (isset($_POST['mail']) && isset($_POST['mdp'])) {
         $_SESSION['id'] = $user['id_personne'];
         header('Location: http://nuitdelinfoihm15.arnaudgrima.fr/index.php?p=login');
     } else {
-        //header('Location: http://localhost/nuitdelinfoihm15/index.php?p=login&r=wrong');
+        header('Location: http://nuitdelinfoihm15.arnaudgrima.fr/index.php?p=login&r=wrong');
     }
 } else {
     echo "error";
