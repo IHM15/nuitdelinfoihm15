@@ -90,6 +90,17 @@ body {
   }
 }
 
+/***************************************************
+ * Canvas
+ ***************************************************/
+canvas {
+  position: absolute;
+  top: 100px;
+  left: 0px;
+  z-index:0;
+  width: 80%;
+  height: 100px;
+}
 
 /***************************************************
  * Jumbotron
@@ -97,6 +108,7 @@ body {
 .jumbotron {
   background: transparent;
   text-align: center;
+  z-index: 99999;
 
   h1 {
     font-family: 'Raleway', sans-serif;

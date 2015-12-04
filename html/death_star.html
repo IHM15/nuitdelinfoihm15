@@ -1,87 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<title>three.js</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-		<style>
-		body {
-			margin: 0px;
-			overflow: hidden;
-		}
-		</style>
-	</head>
-	<body ontouchstart="">
-		<script src="../js/three.min.js"></script>
-		<script src="../js/app.js"></script>
-		<script src="../js/ColladaLoader.js"></script>
-		<script src="../js/OrbitControls.js"></script>
-		<div>
-			<script>
-			
+<script>
 
-			var scene = new THREE.Scene();
-			var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 150 );
-			var dae;
 
-			var renderer = new THREE.WebGLRenderer();
-			renderer.setClearColor( 0xffffff, 1);
-			renderer.setSize( window.innerWidth, window.innerHeight );
-			document.body.appendChild( renderer.domElement );
+	var scene = new THREE.Scene();
+	var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 150 );
+	var dae;
 
-			var loader = new THREE.ColladaLoader();
-			loader.options.convertUpAxis = true;
-			loader.load( 'webglfiles/deathstar.dae', function ( collada ) {
-				//dummy1.dae
-				dae = collada.scene;
-				var skin = collada.skins[ 0 ];
-				dae.position.set(0,0,0);//x,z,y- if you think in blender dimensions ;)
-				dae.scale.set(1,1,1);
-				dae.rotation.x=0.3;
-				scene.add(dae);
-				var axes = new THREE.AxisHelper(50);
-				axes.position = dae.position;
-				//scene.add(axes);
-				var gridXZ = new THREE.GridHelper(100, 10);
-				gridXZ.setColors( new THREE.Color(0x8f8f8f), new THREE.Color(0x8f8f8f) );
-				gridXZ.position.set(0,0,0 );
-				//scene.add(gridXZ);
-			});
+	var renderer = new THREE.WebGLRenderer();
+	renderer.setClearColor( 0xffffff, 1);
+	renderer.setSize( window.innerWidth, window.innerHeight );
+	document.body.appendChild( renderer.domElement );
 
-			camera.position.z = 4;
-			camera.position.y = 1;
-			camera.rotation.x=-0.2;
-			var directionalLight1 = new THREE.DirectionalLight( 0xffffff, 0.5);
-			directionalLight1.position.set( 2, 0, 2 );
-			scene.add( directionalLight1 );
-			var directionalLight2 = new THREE.DirectionalLight( 0xffffff, 0.5 );
-			directionalLight2.position.set( 2, 0, -1 );
-			//scene.add( directionalLight2 );
+	var loader = new THREE.ColladaLoader();
+	loader.options.convertUpAxis = true;
+	loader.load( 'webglfiles/deathstar.dae', function ( collada ) {
+		//dummy1.dae
+		dae = collada.scene;
+		var skin = collada.skins[ 0 ];
+		dae.position.set(0,0,0);//x,z,y- if you think in blender dimensions ;)
+		dae.scale.set(1,1,1);
+		dae.rotation.x=0.3;
+		scene.add(dae);
+		var axes = new THREE.AxisHelper(50);
+		axes.position = dae.position;
+		//scene.add(axes);
+		var gridXZ = new THREE.GridHelper(100, 10);
+		gridXZ.setColors( new THREE.Color(0x8f8f8f), new THREE.Color(0x8f8f8f) );
+		gridXZ.position.set(0,0,0 );
+		//scene.add(gridXZ);
+	});
 
-			var render = function () {
-				requestAnimationFrame( render );
+	camera.position.z = 4;
+	camera.position.y = 1;
+	camera.rotation.x=-0.2;
+	var directionalLight1 = new THREE.DirectionalLight( 0xffffff, 0.5);
+	directionalLight1.position.set( 2, 0, 2 );
+	scene.add( directionalLight1 );
+	var directionalLight2 = new THREE.DirectionalLight( 0xffffff, 0.5 );
+	directionalLight2.position.set( 2, 0, -1 );
+	//scene.add( directionalLight2 );
 
-				dae.rotation.x += 0;
-				dae.rotation.y += 0.01;
-				renderer.render(scene, camera);
-			};
-			window.addEventListener( 'resize', onWindowResize, false );
+	var render = function () {
+		requestAnimationFrame( render );
 
-			function onWindowResize(){
+		dae.rotation.x += 0;
+		dae.rotation.y += 0.01;
+		renderer.render(scene, camera);
+	};
+	window.addEventListener( 'resize', onWindowResize, false );
 
-    			camera.aspect = window.innerWidth / window.innerHeight;
-    			camera.updateProjectionMatrix();
+	function onWindowResize(){
 
-    			renderer.setSize( window.innerWidth, window.innerHeight );
+		camera.aspect = window.innerWidth / window.innerHeight;
+		camera.updateProjectionMatrix();
 
-			};
+		renderer.setSize( window.innerWidth, window.innerHeight );
+
+	};
 
 
 
-			render();
+	render();
 
-		</script>
-		
-		</div>
-	</body>
-</html>
+</script>
