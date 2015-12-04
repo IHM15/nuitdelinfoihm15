@@ -115,7 +115,7 @@ class PDOSingleton {
 
     public function selectPersonne($login)
     {
-        $stmt = $this->PDOInstance->prepare('select * from personne where login = :login');
+        $stmt = $this->PDOInstance->prepare('select * from personne where mail = :login');
         $stmt->bindParam(':login', $login, PDO::PARAM_STR);
         $stmt->execute();
         return $stmt->fetch();
