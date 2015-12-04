@@ -28,71 +28,30 @@
  <!-- PARTIE  MAP -->
       <div class="page-header">
         <h1>MAP des evenements</h1>
-      </div>
-      
+      </div>      
       <div id="map"></div>
-
-
 
       <!-- PARTIE  PANEL -->
       <div class="page-header">
         <h1>informations</h1>
       </div>
-      <div class="row">
-
+     <div class="row">   
   <?php
-      $evts=$pdo->getThreeLastMessages();
-      foreach ($evt as $evt) {
-        echo('<div class="col-sm-4">
-          <div class="panel panel-default">
+      $evts=$pdo->getThreeLastEvents();
+      foreach ($evts as $evt) {
+        echo('
+           <div class="col-sm-4">
+        <div class="panel panel-primary">
             <div class="panel-heading">
               <h3 class="panel-title">'.$evt['nom_evt'].'</h3>
             </div>
             <div class="panel-body">
            '.$evt['resumer'].'
-            </div>
-          </div>'
+            </div></div></div> '
+        );
       }     
-?>
-  </div>
-
-
-
-
-      <!-- PARTIE  PANEL 
-      <div class="page-header">
-        <h1>informations</h1>
-      </div>
-      <div class="row">
-        <div class="col-sm-4">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title">Miss France</h3>
-            </div>
-            <div class="panel-body">
-              Comment se proteger de jp foucault lorsque l'ont candidate pour les miss France
-            </div>
-          </div>
-          <div class="panel panel-primary">
-            <div class="panel-heading">
-              <h3 class="panel-title">les livres à la porter de tous</h3>
-            </div>
-            <div class="panel-body">
-             Nabilla nous explique sa méthode pour lire un livre quand il n'y à pas d'image
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="panel panel-success">
-            <div class="panel-heading">
-              <h3 class="panel-title">Tsunamie en indonnesie</h3>
-            </div>
-            <div class="panel-body">
-              Chuck norris en vacances trouvait qu'il n'y avait pas assez de vague et souffle dans l'ocean
-            </div>
-          </div>
-      </div>
-  -->
-
-
+  ?>
+  
+</div>
+</div>
 
