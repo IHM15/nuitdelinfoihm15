@@ -49,29 +49,6 @@
         <h1>informations</h1>
       </div>
       <div class="row">
-      
-  <?php
-      $pdo=PDOSingleton::getInstance();
-      $Evenement=$pdo->getEvenement();
-
-      foreach ( $Evenement as $var) {
-      	echo('
-  <div class="col-sm-4">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title">'.$alert['nom_evt'].'</h3>
-            </div>
-            <div class="panel-body">'
-				.$alert['resumer'].'
-            </div>
-          </div>
-'
-      		);	
-      }
-      ?>
-
-
-<!-- info
         <div class="col-sm-4">
           <div class="panel panel-default">
             <div class="panel-heading">
