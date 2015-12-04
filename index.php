@@ -83,7 +83,7 @@ error_reporting(E_ALL);
   if(isset($page)) {
 
     switch($page) {
-      case "home" : include("html/home.html");
+      case "home" : include("html/home.php");
         break;
       case "login" : include("html/login.php");
         break;
