@@ -1,5 +1,6 @@
 #popAddEvenement{
     top : 0;
+    left: 0;
     position: fixed;
     display: none;
     z-index:9999;

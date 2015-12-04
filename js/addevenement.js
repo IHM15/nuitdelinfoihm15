@@ -5,6 +5,7 @@ $( document ).ready(function() {
     $("#addevenemnt").click(function(){
         $("#popAddEvenement").css({'height' : $(window).height()});
         $("#popAddEvenement").show(500);
+        $("#inputEventName").focus();
     });
 
     $("#cancelAddEvent").click(function(event){

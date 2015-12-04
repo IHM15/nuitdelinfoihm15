@@ -10,7 +10,6 @@ error_reporting(E_ALL);
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <div lang="fr">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,13 +34,11 @@ error_reporting(E_ALL);
       case "create-event" :  echo'<title> creation d\'evenemtent </title>';
         break;
        case "help" : echo'<title> aide </title>';  
+         break;
       default : echo'<title> Urgence et Réseaux sociaux  </title>';
         break;
     }
-  } else {
-    // TODO : Prepare an error
-    include("html/login.php");
-  }
+  } 
 ?>
 
 
@@ -52,7 +49,7 @@ error_reporting(E_ALL);
     <!-- Bootstrap theme -->
     <link href="css/bootstrap-theme.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="theme.css" rel="stylesheet">
+
     <link href="css/popAddEventCss.css"  rel="stylesheet">
 
 
@@ -64,11 +61,28 @@ error_reporting(E_ALL);
 
 
     <!-- Client-side less -->
-    <link rel="stylesheet/less" type="text/css" href="css/classic.less">
-    <script src="js/less.min.js" type="text/javascript"></script>
-    <script type="text/javascript">
+    <?php
+    if (isset($_COOKIE['sw']) &&  $_COOKIE['sw'] == 'theforce') {
+        echo('<link href="theme.css" rel="stylesheet">
+        <link href="css/themes.sw.css" rel="stylesheet">');
+        print_r('coucou');
+        setcookie('sw','theforcebouu',time()-1);
+        echo('<script type="text/javascript">
+                document.cookie =
+        "sw=theforce; expires=Fri, 3 Aug 2001 20:47:11 UTC; path=/";
+        </script>');
+    }
+    else {
+        echo ('<link class="cssToChange" rel="stylesheet/less" type="text/css" href="css/classic.less">
+        <script class="cssToChange" src="js/less.min.js" type="text/javascript"></script>
+        <script  class="cssToChange" type="text/javascript">
         less.watch();
-    </script>
+        </script>');
+    }
+
+    ?>
+
+
 </head>
 
 <body role="document">
@@ -156,6 +170,7 @@ error_reporting(E_ALL);
 <?php } ?>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/addevenement.js"></script>
+    <script src="js/konami.js"></script>
 <script src="js/ie10-viewport-bug-workaround.js"></script>
 </body>
 </html>

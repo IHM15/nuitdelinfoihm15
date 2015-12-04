@@ -77,12 +77,12 @@ class PDOSingleton {
         $this->DEFAULT_SQL_USER = SQLConstants::SQL_USER;
         //Dans le cas ou nous sommes sur le serveur, il n'y a pas de port (localhost)
         if ($this->DEFAULT_SQL_PORT == SQLConstants::SQL_NO_PORT) {
-            $this->PDOInstance = new PDO('mysql:dbname='.$this->DEFAULT_SQL_DTB.';host='.$this->DEFAULT_SQL_HOST,$this->DEFAULT_SQL_USER ,$this->DEFAULT_SQL_PASS);
+            $this->PDOInstance = new PDO('mysql:dbname='.$this->DEFAULT_SQL_DTB.';host='.$this->DEFAULT_SQL_HOST.';charset=utf8',$this->DEFAULT_SQL_USER ,$this->DEFAULT_SQL_PASS);
         } else {
-            $this->PDOInstance = new PDO('mysql:dbname='.$this->DEFAULT_SQL_DTB.';host='.$this->DEFAULT_SQL_HOST.';port='.$this->DEFAULT_SQL_PORT
+            $this->PDOInstance = new PDO('mysql:dbname='.$this->DEFAULT_SQL_DTB.';host='.$this->DEFAULT_SQL_HOST.';port='.$this->DEFAULT_SQL_PORT.';charset=utf8'
                 ,$this->DEFAULT_SQL_USER ,$this->DEFAULT_SQL_PASS);
         }
-
+        $this->PDOInstance->query('SET NAMES "utf-8"');
     }
 
     /**
