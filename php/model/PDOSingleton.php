@@ -158,4 +158,10 @@ class PDOSingleton {
         $stmt->execute();
         return $stmt->fetchAll();
     }
+
+    public function getThreeLastEvents() {
+        $stmt = $this->PDOInstance->prepare('select * from evenement limit 3');
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
  }
