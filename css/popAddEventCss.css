@@ -1,0 +1,19 @@
+#popAddEvenement{
+    top : 0;
+    position: fixed;
+    display: none;
+    z-index:9999;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+}
+#formaddevent {
+    background-color: #ffffff;
+    height: 100%;
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.first-elem {
+    margin-top: 20px;
+}
