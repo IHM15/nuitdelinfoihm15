@@ -25,6 +25,9 @@ error_reporting(E_ALL);
   if(isset( $_GET['p'])) {
     $page = $_GET['p'];
     switch($page) {
+
+
+         
       case "home" : echo'<title> accueil </title>';
         break;
       case "login" : echo'<title> Connection </title>';
