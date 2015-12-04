@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html>
-  <head>
     <style>
       #map {
         width: 500px;
@@ -20,8 +17,3 @@
       }
       google.maps.event.addDomListener(window, 'load', initialize);
     </script>
-  </head>
-  <body>
-    <div id="map"></div>
-  </body>
-</html>
