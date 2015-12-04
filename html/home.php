@@ -15,13 +15,14 @@
       </div>
       <?php
       $pdo=PDOSingleton::getInstance();
-      $alerts=$pdo->getAlerts();
+      $alerts=$pdo->getThreeLastMessages();
       foreach ($alerts as $alert) {
       	echo('<div class="alert alert-success" role="alert">
         <strong>Warning!</strong> '.$alert['txt'].'
       	</div>');	
       }
       ?>
+
 
 <!-- alerte
       <div class="alert alert-success" role="alert">
@@ -49,7 +50,7 @@
         <h1>informations</h1>
       </div>
       <div class="row">
-
+<!--
   <?php
       $pdo=PDOSingleton::getInstance();
       $Evenement=$pdo->getEvenement();
@@ -69,9 +70,9 @@
       		);	
       }
       ?>
+-->
 
 
-<!-- info
         <div class="col-sm-4">
           <div class="panel panel-default">
             <div class="panel-heading">
@@ -100,7 +101,7 @@
             </div>
           </div>
       </div>
-  -->
+
 
 
 
