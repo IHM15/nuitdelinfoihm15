@@ -11,7 +11,13 @@
   <div class="jumbotron">
         <!-- intégration du logo en 3D -->
         <!-- TODO : include deathstar quand on a le style star wars -->
-        <?php include("earth.html"); ?>
+
+      <?php
+      if (isset($_COOKIE['sw']) &&  $_COOKIE['sw'] == 'theforce') {
+          include('death_star.html');
+      }  else {
+          include("earth.html");
+      }?>
 
         <h1>Urgence et R&eacute;seaux sociaux </h1>
         <p></br>C'est ici qu'il faut venir en cas d'attaque d'alien, d'invasion de zombies ou autre catastrophes naturelles...</p>
@@ -77,18 +83,9 @@
   
 </div>
 </div>
-             Nabilla nous explique sa méthode pour lire un livre quand il n'y à pas d'image
+
             </div>
           </div>
         </div>
-        <div class="col-sm-4">
-          <div class="panel panel-success">
-            <div class="panel-heading">
-              <h3 class="panel-title">Tsunamie en indonnesie</h3>
-            </div>
-            <div class="panel-body">
-              Chuck norris en vacances trouvait qu'il n'y avait pas assez de vague et souffle dans l'ocean
-            </div>
-          </div>
       </div>
 
