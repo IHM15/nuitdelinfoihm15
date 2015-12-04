@@ -63,10 +63,8 @@ error_reporting(E_ALL);
     <!-- Client-side less -->
     <?php
     if (isset($_COOKIE['sw']) &&  $_COOKIE['sw'] == 'theforce') {
-        echo('<link href="theme.css" rel="stylesheet">
-        <link href="css/themes.sw.css" rel="stylesheet">');
-        print_r('coucou');
-        setcookie('sw','theforcebouu',time()-1);
+        echo('<link href="css/themes.sw.css" rel="stylesheet">');
+        setcookie('sw','theforce',time()-1);
         echo('<script type="text/javascript">
                 document.cookie =
         "sw=theforce; expires=Fri, 3 Aug 2001 20:47:11 UTC; path=/";
