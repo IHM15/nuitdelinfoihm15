@@ -1,9 +1,13 @@
 
  <?php
- require_once ('../php/model/PDOSingleton.php');
+ require_once ('php/model/PDOSingleton.php');
+
+    // include create event modal here
+    include("createEvent.php");
 ?>
 
- <!-- header d'acceuil -->
+<div class="col-xs-10">
+ <!-- header d'accueil -->
   <div class="jumbotron">
         <h1>Urgence et Réseaux sociaux </h1>
         <p></br> c'est ici qu'il faut venir en cas d'attaque d'alien,d'invasion zombie ou autre catastrophe naturelle</p>
@@ -13,6 +17,22 @@
     <div class="page-header">
         <h1>Derniers Alerts</h1>
       </div>
+
+    <!-- barre d'outils pour la carte -->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#createEventModal">
+        Signaler un &eacute;v&egrave;nement</button>
+        <button type="button" class="btn btn-default navbar-btn" onclick="openModal();">
+        Signaler un &eacute;v&egrave;nement</button>
+        <script type="text/javascript">
+        function openModal() {
+            $("#createEventModal").modal();
+        }
+        </script>
+      </div>
+    </nav>
+
       <?php
       $pdo=PDOSingleton::getInstance();
       $alerts=$pdo->getAlerts();
@@ -101,6 +121,7 @@
           </div>
       </div>
   -->
+</div>
 
 
 

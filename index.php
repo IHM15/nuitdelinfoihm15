@@ -33,7 +33,6 @@ error_reporting(E_ALL);
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
 </head>
 
 <body role="document">
@@ -83,7 +82,7 @@ error_reporting(E_ALL);
   if(isset($page)) {
 
     switch($page) {
-      case "home" : include("html/home.html");
+      case "home" : include("html/home.php");
         break;
       case "login" : include("html/login.php");
         break;
@@ -91,12 +90,12 @@ error_reporting(E_ALL);
         break;
       case "create-event" : include("html/createEvent.php");
         break;
-      default : include("html/home.php");
+      default : include("html/login.php");
         break;
     }
   } else {
     // TODO : Prepare an error
-    include("html/home.php");
+    include("html/login.php");
   }
 ?>
 
