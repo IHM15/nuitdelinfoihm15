@@ -32,6 +32,16 @@
                 </label>
             </div>
         </div>
+         <?php
+            if (isset($_GET['r']) && $_GET['r'] == 'mailAlreadyExist') {
+                echo('<div class="col-xs-offset-2 col-xs-8 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+            <div class="alert alert-danger" role="alert">
+                <strong>Oups ! </strong>Ce mail est déja associé à un compte.
+            </div>
+        </div>');
+            }
+
+        ?>
         <div class="col-xs-offset-2 col-xs-8 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
             <input type="submit" class="btn btn-primary btn-lg" value="Inscription">
         </div>
