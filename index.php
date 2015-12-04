@@ -102,7 +102,7 @@ error_reporting(E_ALL);
                 <!-- TODO : ajouter le logo
                 <img alt="Brand" src="...">
                  -->
-                <a class="navbar-brand" href="#">Titre du site</a>
+                <a class="navbar-brand" href="#">Incredibly Heroic Media</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
