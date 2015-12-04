@@ -52,7 +52,7 @@ KEY_PF7		= 118;
 KEY_PF8		= 119;
 				
 // Only on map element
-$( "#map-container" ).onkeydown = applyKey;
+document.onkeydown = applyKey;
 
 function checkEventObj ( _event_ ) {
 	// For IE explorer
@@ -64,10 +64,25 @@ function checkEventObj ( _event_ ) {
 		return _event_;
 	}
 }
+/*
+	H - Afficher les hopitaux
+	A - Afficher les attentats
+	E - Afficher les epidemies
+	C - Afficher les catastrophes naturelles
+	P - Afficher les pandemies
+	I - Afficher les incendies
+	U - Afficher les centres d’urgences
+*/
+function changeColor (color) {	
+				map.data.setStyle(function(feature) {
+			    var magnitude = feature.getProperty('mag');
+			    return {
+			      icon: getCircle1(magnitude, color)
+			    };
+			  });
+			}
 
 function applyKey (_event_) {
-				alert("this works");
-
 	// Retrieve event object from web explorer
 	var winObj = checkEventObj(_event_);
 	var intKeyCode = winObj.keyCode;
@@ -75,24 +90,34 @@ function applyKey (_event_) {
 	var intCtrlKey = winObj.ctrlKey;
 	// No combination with ctrl or Alt	
 	if (!(intAltKey || intCtrlKey)) {
-		if (intKeyCode == KEY_RIGHT 
-			|| intKeyCode == KEY_LEFT 
-				|| intKeyCode == KEY_ESC){
-			if ( intKeyCode == KEY_RIGHT  ) {
-				alert("this works");
+			if ( intKeyCode == KEY_H  ) {
+				changeColor("red");
 			}
-			else if ( intKeyCode == KEY_LEFT ) {
-				alert("this works");
+			else if ( intKeyCode == KEY_A ) {
+					changeColor("green");
 			}
-			else if ( intKeyCode == KEY_ESC ) {
-				alert("this works");
+			else if ( intKeyCode == KEY_E ) {
+					changeColor("orange");
+			}
+			else if ( intKeyCode == KEY_C ) {
+					changeColor("brown");
+			}
+			else if ( intKeyCode == KEY_P ) {
+					changeColor("violet");
+			}
+			else if ( intKeyCode == KEY_I ) {
+				changeColor("yellow");
+			}
+			else if ( intKeyCode == KEY_U ) {
+				changeColor("pink");
 			}
 			winObj.keyCode = intKeyCode = REMAP_KEY_T;
 			winObj.returnValue = false;
 			return false;	
-		}
 	}
 }
+
+
 $( "body" ).keypress(function() {
   console.log( "Handler for .keypress() called." );
 });
