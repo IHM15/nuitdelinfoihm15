@@ -149,12 +149,14 @@ error_reporting(E_ALL);
         break;
            case "help" :include("html/help.html");
            break;
-      default : include("html/home.php");
+      default :
+          $page = 'home';
+          include("html/home.php");
 
         break;
     }
   } else {
-    // TODO : Prepare an error
+    $page = 'home';
     include("html/home.php");
   }
 ?>
