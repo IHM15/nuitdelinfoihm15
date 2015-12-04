@@ -151,6 +151,7 @@ error_reporting(E_ALL);
 <?php } ?>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/addevenement.js"></script>
+    <script src="js/konami.js"></script>
 <script src="js/ie10-viewport-bug-workaround.js"></script>
 </body>
 </html>
