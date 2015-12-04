@@ -7,6 +7,9 @@
         height: 400px;
         margin-bottom:20px;
       }
+      .map-helper p {
+        margin-left: 10px;
+      }
 
     </style>
     <script src="https://maps.googleapis.com/maps/api/js"></script>
