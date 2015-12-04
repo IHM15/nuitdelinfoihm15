@@ -10,7 +10,7 @@ body{
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    font: 700 1em "News Cycle", sans-serif;
+    font-family: "News Cycle";
 }
 
 h1 {
