@@ -41,9 +41,8 @@
       <div class="page-header">
         <h1>MAP des evenements</h1>
       </div>
-      <div class="well">
-      <iframe width="400" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://cartosm.eu/map?lon=34.883967618713&lat=32.763011805555&zoom=1&width=400&height=350&mark=true&nav=true&pan=true&zb=inout&style=default&icon=down"></iframe>
-      </div>
+      
+      <div id="map"></div>
 
       <!-- PARTIE  PANEL -->
       <div class="page-header">
