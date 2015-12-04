@@ -3,6 +3,9 @@
  require_once ('php/model/PDOSingleton.php');
 ?>
 
+ <div id="popAddEvenement">
+     <?php include("html/createEvent.php"); ?>
+ </div>
  <!-- header d'acceuil -->
  <title> Accueil </title>
   <div class="jumbotron">
@@ -26,6 +29,7 @@
 
 
 
+
  <!-- PARTIE  MAP -->
       <div class="page-header">
         <h1>MAP des evenements</h1>
@@ -34,8 +38,10 @@
       <div id="map-container">
 
       <div id="map"></div>
-      </div>
 
+      <div>
+          <button id="addevenemnt" type="button" class="btn btn-lg btn-default">Ajouter Evenement</button>
+      </div>
       <!-- PARTIE  PANEL -->
       <div class="page-header">
         <h1>informations</h1>
