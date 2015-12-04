@@ -4,8 +4,10 @@
     }
       #map {
         width: 100%;
-        height: 600px;
+        height: 400px;
         margin-bottom:20px;
+        padding-left: 10px;
+        padding-right: 10px;
       }
       .map-helper p {
         margin-left: 10px;
