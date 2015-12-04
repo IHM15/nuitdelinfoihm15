@@ -130,7 +130,7 @@ class PDOSingleton {
         $stmt->bindParam(':mdp', $mdp, PDO::PARAM_STR);
         $stmt->bindParam(':dv', $dv, PDO::PARAM_BOOL);
         print_r($this->getUser($mail));
-        if (!$this->getUser($mail))
+        if ($this->getUser($mail))
             return null;
         return $stmt->execute();
     }
@@ -169,7 +169,7 @@ class PDOSingleton {
         return $stmt->fetchAll();
     }
     public function getUser($mail){
-        $stmt = $this->PDOInstance->prepare('select mail from personne WHEN mail=:mail');
+        $stmt = $this->PDOInstance->prepare('select mail from personne where mail=:mail');
         $stmt->bindParam(':mail', $mail, PDO::PARAM_STR);
         $stmt->execute();
         return $stmt->fetch();
