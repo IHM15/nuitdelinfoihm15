@@ -10,7 +10,7 @@ require_once('../model/PDOSingleton.php');
  */
 
 if (isset($_POST['mail']) && isset($_POST['mdp'])) {
-    $mail = $_POST['login'];
+    $mail = $_POST['mail'];
     $pass = $_POST['mdp'];
     $pdo = PDOSingleton::getInstance();
     $user = $pdo->selectPersonne($mail);
