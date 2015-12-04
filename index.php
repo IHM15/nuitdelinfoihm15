@@ -34,6 +34,7 @@ error_reporting(E_ALL);
         break;
       case "create-event" :  echo'<title> creation d\'evenemtent </title>';
         break;
+       case "help" : echo'<title> aide </title>';  
       default : echo'<title> Urgence et Réseaux sociaux  </title>';
         break;
     }
@@ -124,7 +125,10 @@ error_reporting(E_ALL);
         break;
       case "create-event" : include("html/createEvent.php");
         break;
+           case "help" :include("html/help.html");
+           break;
       default : include("html/login.php");
+
         break;
     }
   } else {
