@@ -7,8 +7,8 @@ var k = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65],
 $(document).keydown(function (e) {
     if (e.keyCode === k[n++]) {
         if (n === k.length) {
-            alert('Laissez vous tenter par le coté de la force'); // à remplacer par votre code
-            changeCSS();
+            alert('Laissez vous tenter par le coté obscur de la force'); // à remplacer par votre code
+            changeToObscure();
             n = 0;
             return false;
         }
@@ -20,13 +20,18 @@ $(document).keydown(function (e) {
 
 function changeToObscure() {
 
-    var links = document.getElementsByTagName("link");
+   /* var links = document.getElementsByTagName("link");
 
     var oldlink = links.item(links.length - 1);
     var newlink = document.createElement("link");
     newlink.setAttribute("rel", "stylesheet");
     newlink.setAttribute("type", "text/css");
-    newlink.setAttribute("href", "css/theme.sw.css");
+    newlink.setAttribute("href", "css/themes.sw.css");
+    console.log(document.getElementsByTagName("head"));
+    document.getElementsByTagName("head").item(0).replaceChild(newlink, oldlink);*/
 
-    document.getElementByTagName("head").item(0).replaceChild(newlink, oldlink);
+    document.cookie =
+        'sw=theforce; expires=Fri, 3 Aug 2021 20:47:11 UTC; path=/';
+    location.reload();
+
 }

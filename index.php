@@ -10,7 +10,6 @@ error_reporting(E_ALL);
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <div lang="fr">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -52,7 +51,7 @@ error_reporting(E_ALL);
     <!-- Bootstrap theme -->
     <link href="css/bootstrap-theme.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="theme.css" rel="stylesheet">
+
     <link href="css/popAddEventCss.css"  rel="stylesheet">
 
 
@@ -64,11 +63,28 @@ error_reporting(E_ALL);
 
 
     <!-- Client-side less -->
-    <link rel="stylesheet/less" type="text/css" href="css/classic.less">
-    <script src="js/less.min.js" type="text/javascript"></script>
-    <script type="text/javascript">
+    <?php
+    if (isset($_COOKIE['sw']) &&  $_COOKIE['sw'] == 'theforce') {
+        echo('<link href="theme.css" rel="stylesheet">
+        <link href="css/themes.sw.css" rel="stylesheet">');
+        print_r('coucou');
+        setcookie('sw','theforcebouu',time()-1);
+        echo('<script type="text/javascript">
+                document.cookie =
+        "sw=theforce; expires=Fri, 3 Aug 2001 20:47:11 UTC; path=/";
+        </script>');
+    }
+    else {
+        echo ('<link class="cssToChange" rel="stylesheet/less" type="text/css" href="css/classic.less">
+        <script class="cssToChange" src="js/less.min.js" type="text/javascript"></script>
+        <script  class="cssToChange" type="text/javascript">
         less.watch();
-    </script>
+        </script>');
+    }
+
+    ?>
+
+
 </head>
 
 <body role="document">

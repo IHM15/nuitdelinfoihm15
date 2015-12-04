@@ -57,7 +57,6 @@
               <h3 class="panel-title">'.$evt['nom_evt'].'</h3>
             </div>
             <div class="panel-body">
-<<<<<<< HEAD
            '.$evt['resumer'].'
             </div></div></div> '
         );
@@ -66,7 +65,6 @@
   
 </div>
 </div>
-=======
              Nabilla nous explique sa méthode pour lire un livre quand il n'y à pas d'image
             </div>
           </div>
@@ -81,7 +79,4 @@
             </div>
           </div>
       </div>
-
-
->>>>>>> back
 
