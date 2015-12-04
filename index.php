@@ -10,6 +10,7 @@ error_reporting(E_ALL);
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <div lang="fr">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,7 +19,32 @@ error_reporting(E_ALL);
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Titre du site</title>
+
+<!-- Routage en mode YOLO -->
+<?php
+
+  $page = $_GET['p'];
+  if(isset($page)) {
+    switch($page) {
+      case "home" : echo'<title> accueil </title>';
+        break;
+      case "login" : echo'<title> Connection </title>';
+        break;
+      case "signup" : echo'<title> Enregistrement </title>';
+        break;
+      case "create-event" :  echo'<title> creation d\'evenemtent </title>';
+        break;
+      default : echo'<title> Urgence et Réseaux sociaux  </title>';
+        break;
+    }
+  } else {
+    // TODO : Prepare an error
+    include("html/login.php");
+  }
+?>
+
+
+    
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -88,7 +114,6 @@ error_reporting(E_ALL);
 
   $page = $_GET['p'];
   if(isset($page)) {
-
     switch($page) {
       case "home" : include("html/home.php");
         break;

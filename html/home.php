@@ -4,6 +4,7 @@
 ?>
 
  <!-- header d'acceuil -->
+ <title> Accueil </title>
   <div class="jumbotron">
         <h1>Urgence et Réseaux sociaux </h1>
         <p></br> c'est ici qu'il faut venir en cas d'attaque d'alien,d'invasion zombie ou autre catastrophe naturelle</p>
