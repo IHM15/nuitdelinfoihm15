@@ -8,7 +8,6 @@ require_once('../model/PDOSingleton.php');
  * Date: 03/12/2015
  * Time: 21:21
  */
-print_r($_POST);
 if (isset($_POST['mail']) && isset($_POST['mdp']) && isset($_POST['nom']) && isset($_POST['prenom'])
     && isset($_POST['tel'])) {
     $mail = $_POST['mail'];
@@ -18,16 +17,15 @@ if (isset($_POST['mail']) && isset($_POST['mdp']) && isset($_POST['nom']) && iss
     $tel = $_POST['tel'];
     $dv = isset($_POST['dv']) ? true : false;
     $pdo = PDOSingleton::getInstance();
-    print_r("test");
     $mdp = md5($mdp);
     $user = $pdo->insertPersonne($nom, $prenom, $mail, $tel, $mdp, $dv);
     if ( $user == TRUE ) {
         $_SESSION['mail'] = $mail;
-        header('Location: http://localhost/nuitdelinfoihm15/index.php?p=home');
+        //header('Location: http://localhost/nuitdelinfoihm15/index.php?p=home');
     } else if ($user == null) {
-        header('Location: http://localhost/nuitdelinfoihm15/index.php?p=signup&r=mailAlreadyExist');
+       // header('Location: http://localhost/nuitdelinfoihm15/index.php?p=signup&r=mailAlreadyExist');
     } else {
-        header('Location: http://localhost/nuitdelinfoihm15/index.php?p=signup&r=notinsertPersonne');
+       // header('Location: http://localhost/nuitdelinfoihm15/index.php?p=signup&r=notinsertPersonne');
     }
 } else {
     echo "error";
