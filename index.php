@@ -139,7 +139,11 @@ error_reporting(E_ALL);
 <!-- Routage en mode YOLO -->
 <?php
 
-  $page = $_GET['p'];
+
+  if (isset($_GET['p'])) {
+      $page = $_GET['p'];
+  }
+
   if(isset($page)) {
     switch($page) {
       case "home" : include("html/home.php");
@@ -152,13 +156,13 @@ error_reporting(E_ALL);
         break;
            case "help" :include("html/help.html");
            break;
-      default : include("html/login.php");
+      default : include("html/home.php");
 
         break;
     }
   } else {
     // TODO : Prepare an error
-    include("html/login.php");
+    include("html/home.php");
   }
 ?>
 
