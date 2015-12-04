@@ -16,7 +16,11 @@ h1 {
 
 .jumbotron {
     text-align: center;
-    
+    padding-top: 100px;
+    background-image:url(../img/swbackground.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #FFF;
 }
 
 .jumbotron h1 {
@@ -27,4 +31,30 @@ h1 {
 
 .navbar {
     background: transparent;
+    border-bottom: transparent;
+}
+
+.navbar li {
+    
+}
+
+.navbar-brand {
+    font-family: "Jedi";
+    color: #FFF;
+}
+
+.page-header {
+    
+}
+
+@media (min-width: 768px) {
+    .jumbotron h1 {
+        font-size: 80px;    
+    }
+}
+
+@media (min-width: 992px) {
+    .jumbotron h1 {
+        font-size: 100px;    
+    }
 }
