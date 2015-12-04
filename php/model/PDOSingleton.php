@@ -162,6 +162,12 @@ class PDOSingleton {
         return $stmt->fetchAll();
     }
 
+    public function getThreeLastEvents()
+    {
+        $stmt = $this->PDOInstance->prepare('SELECT * FROM evenement LIMIT 3');
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
     public function getUser($mail){
         $stmt = $this->PDOInstance->prepare('select mail from personne WHEN mail=:mail');
         $stmt->bindParam(':mail', $mail, PDO::PARAM_STR);
