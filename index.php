@@ -23,8 +23,8 @@ error_reporting(E_ALL);
 <!-- Routage en mode YOLO -->
 <?php
 
-  $page = $_GET['p'];
-  if(isset($page)) {
+  if(isset( $_GET['p'])) {
+    $page = $_GET['p'];
     switch($page) {
       case "home" : echo'<title> accueil </title>';
         break;
