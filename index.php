@@ -118,19 +118,10 @@ error_reporting(E_ALL);
                     <button type="submit" class="btn btn-default">Submit</button>
                 </form>
 
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown">
-                        <!-- TODO : variable PHP to display profile
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo profile_name; ?><span class="caret"></span></a>
-                        -->
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profil<span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="?p=signin">Mon profil</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">Déconnexion</a></li>
-                        </ul>
-                    </li>
-                </ul>
+      <p>
+        <button type="button" class="btn btn-lg btn-default"  onclick="self.location.href='index.php?p=login'">Connexion</button>
+        <button type="button" class="btn btn-lg btn-primary"  onclick="self.location.href='index.php?p=signup'">S'enregistrer</button>
+      </p>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
